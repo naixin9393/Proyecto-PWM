@@ -1,0 +1,13 @@
+section{
+    background-color: bisque;
+    overflow: auto;
+}
+
+h1{
+    font-weight: bold;
+    color: black;
+}
+
+h2{
+    color: brown;
+}

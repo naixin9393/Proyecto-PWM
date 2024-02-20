@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var DiscoverButton = document.getElementById('Button_Mis_Tops');
     DiscoverButton.addEventListener('click', function(){
-        window.location.href='prueba.html';
+        window.location.href='Prueba_Header.html';
     })
 
     var RankingsButton = document.getElementById('Button_Rankings');
     RankingsButton.addEventListener('click', function(){
-        window.location.href='prueba.html';
+        window.location.href='Prueba_Header.html';
     })
 
     var LoginButton = document.getElementById('Button_Log_in');
     LoginButton.addEventListener('click', function(){
-        window.location.href='prueba.html';
+        window.location.href='Prueba_Header.html';
     });
 
 })

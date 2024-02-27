@@ -1,0 +1,37 @@
+button{
+    font-family: inter;
+    font-size: 130%;
+    background-color: transparent;
+    border: none; 
+}
+
+#Button_Mis_Tops {
+    color:#B38867; 
+    font-size:200%; 
+    margin-left: 5%;
+    
+}
+
+#Header_Buttons {
+    text-align:right;
+}
+
+#Button_Discover {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+#Button_Rankings {
+    margin-right: 5%;
+}
+
+#Button_Log_in {
+    font-family:inter; 
+    font-size:130%; 
+    background-color: #626D71; 
+    border-color: transparent; 
+    color:white; 
+    border-radius: 8px; 
+    width: 126px; 
+    height:48px;
+    margin-right: 5%;
+}

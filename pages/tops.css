@@ -1,9 +1,3 @@
-* {
-  margin: 5px;
-  padding: 5px;
-  border: 0;
-  color: black;
-}
 body{
   background-color:#DBC7B6;
 }
@@ -16,7 +10,7 @@ body{
   margin: 0 auto;
   align-self: center
 }
-button{
+.share{
   background-color: #48321D;
   color: white;
   display: block;

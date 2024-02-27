@@ -1,8 +1,13 @@
+body{
+    overflow: auto;
+    width:60%;
+    display: inline-flex;
+    justify-content: center;
+}
 article{
     background-color: #B89D7E;
     margin: 5px;
     padding: 5px;
-    display: block;
 }
 .song{
     display: inline-block;

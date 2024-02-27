@@ -1,3 +1,24 @@
 * {
-  color: red;
+  margin: 5px;
+  padding: 5px;
+  border: 0;
+  color: black;
+}
+body{
+  background-color:#DBC7B6;
+}
+
+.vertical_scroller{
+  height: 30em;
+  overflow: auto;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  align-self: center
+}
+button{
+  background-color: #48321D;
+  color: white;
+  display: block;
+  margin: 0 auto;
 }

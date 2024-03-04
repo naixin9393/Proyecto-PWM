@@ -14,5 +14,28 @@ body{
   background-color: #48321D;
   color: white;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
+
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  border-radius: 34px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
+}
+
+
+
+button:hover::before {
+  scale: 3;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+button:active {
+  scale: 1;
 }

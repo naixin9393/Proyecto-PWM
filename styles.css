@@ -22,12 +22,12 @@ body{
 }
 .entry_name{
     font-weight: bold;
-    font-family: "Times New Roman", serif;
+    font-family: sans-serif, serif;
     color: black;
 }
 
 .entry_author{
-    font-family: "Times New Roman", serif;
+    font-family: sans-serif, serif;
     color: #995D21;
 }
 

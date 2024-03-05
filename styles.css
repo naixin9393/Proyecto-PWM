@@ -1,9 +1,9 @@
 body{
-    background-color:#DBC7B6;
+    background-color:#CDCDC0;;
 }
 
 .vertical-entry{
-    background-color: #B89D7E;
+    background-color: #F2E8E1;
     margin: 5px;
     padding: 5px;
     display: block;
@@ -28,7 +28,7 @@ body{
 
 .entry_author{
     font-family: "Times New Roman", serif;
-    color: #995D21;
+    color: black;
 }
 
 
@@ -41,7 +41,7 @@ body{
     align-self: center
 }
 .share{
-    background-color: #48321D;
+    background-color: #626D71;
     color: white;
     display: block;
     margin: 1em auto;
@@ -71,7 +71,7 @@ button:active {
 }
 
 .discovery_category {
-    background-color: #B38867;
+    background-color: #F0E8E1;
     display:inline-flex;
     text-align: center;
     width: 45%;

@@ -30,13 +30,6 @@
                 window.location.href='prueba.html';
             });
         }
-        
-        var LoginButton = document.getElementById('Button_Log_in');
-        if(LoginButton){
-            LoginButton.addEventListener('click', function(){
-                window.location.href='prueba.html';
-            });
-        }
     });
     
     document.addEventListener("DOMContentLoaded",function(){

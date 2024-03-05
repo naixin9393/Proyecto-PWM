@@ -11,7 +11,8 @@ body{
 .entry_descriptor{
     display: inline-block;
 }
-.imagen{
+
+.imagen {
     width: 10%;
     display:inline-block;
 }
@@ -31,7 +32,6 @@ body{
     color: #995D21;
 }
 
-
 .scroller{
     height: 30em;
     overflow: auto;
@@ -40,6 +40,7 @@ body{
     margin: 0 auto;
     align-self: center
 }
+
 .share{
     background-color: #626D71;
     color: white;
@@ -56,7 +57,14 @@ body{
     overflow: hidden;
 }
 
-
+button {
+    font-family: inter, sans-serif;
+    font-size: 130%;
+    background-color: transparent;
+    padding: 2px 1em;
+    border-radius: 1em;
+    border: none;
+}
 
 button:hover::before {
     scale: 3;
@@ -94,4 +102,23 @@ button:active {
     width: 12em;
     transition: all ease-in-out .5s;
     margin-right: -2rem;
+}
+
+select {
+    border: none;
+    color: black;
+    padding: 1em 1em;
+    border-radius: 0.5em;
+}
+
+textarea {
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 1em;
+}
+
+figure {
+    justify-content: center;
+    align-items: center;
 }

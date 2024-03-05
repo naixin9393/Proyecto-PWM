@@ -11,3 +11,8 @@ export async function fetchJson(url) {
     let response = await fetch(url);
     return response.json();
 }
+
+export function replaceBody(body) {
+    document.querySelector('#app').innerHTML = '';
+    document.querySelector('#app').appendChild(body);
+}

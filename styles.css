@@ -28,7 +28,7 @@ body{
 
 .entry_author{
     font-family: "Times New Roman", serif;
-    color: #B38867;
+    color: #995D21;
 }
 
 
@@ -71,7 +71,7 @@ button:active {
 }
 
 .discovery_category {
-    background-color: #F0E8E1;
+    background-color: #B38867;
     display:inline-flex;
     text-align: center;
     width: 45%;

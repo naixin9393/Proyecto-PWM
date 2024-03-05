@@ -1,37 +1,34 @@
-button{
-    font-family: inter;
+button {
+    font-family: inter, sans-serif;
     font-size: 130%;
     background-color: transparent;
-    border: none; 
+    border: none;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    color: #995D21;
 }
 
 #Button_Mis_Tops {
     color:#B38867; 
     font-size:200%; 
-    margin-left: 5%;
-    
 }
 
 #Header_Buttons {
+    display: flex;
     text-align:right;
-}
-
-#Button_Discover {
-    margin-right: 5%;
-    margin-left: 5%;
-}
-#Button_Rankings {
-    margin-right: 5%;
+    gap: 3em;
 }
 
 #Button_Log_in {
-    font-family:inter; 
+    font-family: inter, sans-serif;
     font-size:130%; 
     background-color: #626D71; 
-    border-color: transparent; 
-    color:white; 
-    border-radius: 8px; 
-    width: 126px; 
-    height:48px;
-    margin-right: 5%;
+    color:white;
+    border-radius: 8px;
+    padding: 7px 1em;
 }

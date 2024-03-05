@@ -1,0 +1,21 @@
+#Footer_text{
+    color:#B38867;
+    font-size:80%;
+}
+
+#Footer_container{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+#Footer_Rights{
+    display: flex;
+    flex-direction: column;
+}
+.Social_Icons{
+    display: flex;
+    flex-direction:column;
+}
+

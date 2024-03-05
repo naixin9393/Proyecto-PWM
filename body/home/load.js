@@ -1,0 +1,14 @@
+import { loadTop } from '/body/home/top/load.js';
+import { loadTemplate} from '/loadingFunctions.js';
+
+document.addEventListener('DOMContentLoaded', async function() {
+    let homePage = await loadTemplate('/body/home/home.html');
+    await loadTops(homePage);
+    document.getElementById('app').appendChild(homePage);
+});
+
+async function loadTops(homePage) {
+    let topsSection = homePage.querySelector('#tops-section');
+    topsSection.appendChild(await loadTop('series'));
+    topsSection.appendChild(await loadTop('musics'))
+}

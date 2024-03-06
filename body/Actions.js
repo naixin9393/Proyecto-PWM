@@ -13,7 +13,7 @@
         var MisTopsButton = document.getElementById('Button_Discover');
         if(MisTopsButton){
             MisTopsButton.addEventListener('click', function(){
-                window.location.href='prueba.html';
+                window.location.href='discover_page.html';
             });
         }
     
@@ -27,7 +27,7 @@
         var RankingsButton = document.getElementById('Button_Rankings');
         if(RankingsButton){
             RankingsButton.addEventListener('click', function(){
-                window.location.href='prueba.html';
+                window.location.href='my_rankings_page.html';
             });
         }
         

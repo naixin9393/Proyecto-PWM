@@ -22,15 +22,3 @@
 </section>
 </body>
 </html>
-
-
-<script>
-    import { loadTopRankingBody } from "/body/rankings/top_ranking/load.js";
-    var categories = document.getElementsByClassName("discovery_category");
-    for (let i = 0; i < categories.length; i++) {
-        categories.item(i).addEventListener('click',
-            async function () {
-                await loadTopRankingBody();
-            });
-    }
-</script>

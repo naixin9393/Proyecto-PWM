@@ -20,7 +20,7 @@
         var DiscoverButton = document.getElementById('Button_Mis_Tops');
         if(DiscoverButton){
             DiscoverButton.addEventListener('click', function(){
-                window.location.href='prueba.html';
+                window.location.href='tops.html';
             });
         }
 
@@ -78,7 +78,7 @@
         if(savedText){
             var opinion_text = document.getElementById("Opinion_Text_Area");
             if(opinion_text){
-                opinion_text.value = savedText;
+                /* opinion_text.value = savedText;*/
             }
         }
     });

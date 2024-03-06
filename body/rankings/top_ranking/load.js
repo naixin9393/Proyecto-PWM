@@ -1,4 +1,4 @@
-import {loadTemplate, replaceBody} from '/loadingFunctions.js';
+import { loadTemplate, replaceBody } from '/loadingFunctions.js';
 document.addEventListener('DOMContentLoaded', async function() {
     await loadTopRankingBody();
 });

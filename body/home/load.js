@@ -16,4 +16,5 @@ async function loadTops(homePage) {
     let topsSection = homePage.querySelector('#tops-section');
     topsSection.appendChild(await loadTop('series'));
     topsSection.appendChild(await loadTop('musics'))
+    topsSection.appendChild(await loadTop('movies'))
 }

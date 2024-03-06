@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Movie 1",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 2",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 3",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 4",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 5",
+    "image": "/images/sample.jpg"
+  }
+]

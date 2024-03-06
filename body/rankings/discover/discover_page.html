@@ -3,39 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Discover</title>
-    <script src="/body/xlu-include-file.js"></script>
-    <script src="/header/Actions_Header.js"></script>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/body/rankings/discover/styles.css"/>
 </head>
+
 <body>
 <div class="search">
     <input type="text" class="search__input" placeholder="Type your text">
 </div>
 
 <section class="discovery_category">
-    <h1>Music</h1>
+    <h1>Top Music Worldwide</h1>
 </section>
 <section class="discovery_category">
-    <h1>Films</h1>
+    <h1>Top Films Worldwide</h1>
 </section>
 <section class="discovery_category">
-    <h1>Books</h1>
+    <h1>Top Books Worldwide</h1>
 </section>
 </body>
 </html>
 
 
 <script>
+    import { loadTopRankingPage } from "/body/home/load.js";
     var categories = document.getElementsByClassName("discovery_category");
     for (let i = 0; i < categories.length; i++) {
         categories.item(i).addEventListener('click',
-            function () {
-                window.location.assign('top_ranking.html');
+            async function () {
+                await loadTopRankingPage();
             });
     }
-</script>
-<script>
-
-    xLuIncludeFile();
-
 </script>

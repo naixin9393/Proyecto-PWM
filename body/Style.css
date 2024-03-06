@@ -107,4 +107,30 @@ button{
     border-color:transparent; 
 }
 
+#Footer_text{
+    color:#B38867; 
+    font-size:80%; 
+    position:fixed;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+    /*text-align: center;*/
+}
+
+#Footer_container{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+#Footer_Rights{
+    display: flex;
+    flex-direction: column;
+}
+.Social_Icons{
+    display: flex; 
+    flex-direction:column;
+}
+
+
 

@@ -34,7 +34,7 @@
         var LoginButton = document.getElementById('Button_Log_in');
         if(LoginButton){
             LoginButton.addEventListener('click', function(){
-                window.location.href='prueba.html';
+                window.location.href='/login/login.html';
             });
         }
     });

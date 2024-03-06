@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover</title>
+    <link rel="stylesheet" href="/body/rankings/my_rankings/styles.css" />
+</head>
+<body>
+<section class="your_tops_category">
+    <h1>Your Top Music</h1>
+</section>
+<section class="your_tops_category">
+    <h1>Your Top Films</h1>
+</section>
+<section class="your_tops_category">
+    <h1>Your Top Books</h1>
+</section>
+</body>
+</html>
+
+
+<script>
+    import { loadTopRankingBody } from "/body/rankings/top_ranking/load.js";
+    var categories = document.getElementsByClassName("your_tops_category");
+    for (let i = 0; i < categories.length; i++) {
+        categories.item(i).addEventListener('click',
+            async function () {
+                await loadTopRankingBody();
+            });
+    }
+</script>

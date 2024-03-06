@@ -1,0 +1,54 @@
+.vertical-entry{
+    background-color: #F2E8E1;
+    margin: 5px;
+    padding: 5px;
+    display: block;
+}
+.entry_descriptor{
+    display: inline-block;
+}
+
+.imagen {
+    width: 10%;
+    display:inline-block;
+}
+
+.points{
+    display: inline-block;
+    vertical-align: top;
+}
+.entry_name{
+    font-weight: bold;
+    font-family: sans-serif, serif;
+    color: black;
+}
+
+.entry_author{
+    font-family: sans-serif, serif;
+    color: #995D21;
+}
+
+.scroller{
+    height: 30em;
+    overflow: auto;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    align-self: center
+}
+
+.share{
+    background-color: #626D71;
+    color: white;
+    display: block;
+    margin: 1em auto;
+
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    border-radius: 34px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}

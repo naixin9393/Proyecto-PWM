@@ -15,6 +15,11 @@ export async function loadHomeBody() {
 
 async function loadTops(homePage) {
     let topsSection = homePage.querySelector('#tops-section');
+    let bestRatedTextContainer = homePage.querySelector('#best-rated-text-container');
+    let bestRatedText = document.createElement('p');
+    bestRatedText.textContent = 'Best rated';
+    bestRatedText.id = 'best-rated-text';
+    bestRatedTextContainer.appendChild(bestRatedText);
     topsSection.appendChild(await loadTop('series'));
     topsSection.appendChild(await loadTop('musics'))
     topsSection.appendChild(await loadTop('movies'))

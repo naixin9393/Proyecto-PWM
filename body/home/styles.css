@@ -1,0 +1,25 @@
+#tops-section {
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+}
+
+#best-rated-text-container {
+    display: flex;
+    justify-content: center;
+}
+
+#best-rated-text {
+    font-family: inter, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #b38867;
+}
+
+#best-rated-text::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
+}

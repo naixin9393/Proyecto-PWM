@@ -18,5 +18,25 @@
   {
     "name": "Series 5",
     "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 6",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 7",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 8",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 9",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 10",
+    "image": "/images/sample.jpg"
   }
 ]

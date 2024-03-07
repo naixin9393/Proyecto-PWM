@@ -18,5 +18,25 @@
   {
     "name": "Movie 5",
     "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 6",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 7",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 8",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 9",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Movie 10",
+    "image": "/images/sample.jpg"
   }
 ]

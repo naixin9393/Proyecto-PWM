@@ -55,7 +55,7 @@
 
 .horizontal-scroll-view-item {
     display: flex;
-    min-width: 25%;
+    min-width: 15em;
     flex-direction: column;
     align-items: center;
     background: #f2e8e1;

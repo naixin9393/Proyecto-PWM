@@ -37,8 +37,11 @@
 
 .question-text {
     font-size: 1em;
-    text-decoration: underline;
     cursor: pointer;
+}
+
+.question-text:hover {
+    text-decoration: underline;
 }
 
 .form-button {

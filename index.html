@@ -6,21 +6,24 @@
     <link rel="stylesheet" href="styles.css" type="text/css"/>
 </head>
 
-<header id="header"></header>
-
 <body>
-<div id="app"></div>
-</body>
 
+<header id="header"></header>
+<div id="app"></div>
 <footer id="footer"></footer>
 
-<script type="module" src="./header/load.js"></script>
+</body>
 
-<script type="module" src="./body/home/load.js"></script>
-<!--<script type="module" src="./body/register/load.js"></script>-->
-<!--<script type="module" src="./body/login/load.js"></script>-->
-<!--<script type="module" src="./body/add-content/load.js"></script>-->
+<script type="module">
+    import { loadHomeBody } from './body/home/load.js';
+    import { loadHeader } from './header/load.js';
+    import { loadFooter } from './footer/load.js';
 
-<script type="module" src="./footer/load.js"></script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        loadHeader();
+        loadHomeBody();
+        loadFooter();
+    });
+</script>
 
 </html>

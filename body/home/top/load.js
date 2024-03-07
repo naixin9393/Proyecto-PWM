@@ -1,4 +1,4 @@
-import { loadTemplate, fetchJson } from '/loadingFunctions.js';
+import { loadTemplate, fetchJson } from '../../../loadingFunctions.js';
 
 export async function loadTop(category) {
     let top = await loadTemplate('/body/home/top/top.html');

@@ -1,4 +1,4 @@
-import {loadTemplate, replaceBody, fetchJson} from '/loadingFunctions.js';
+import {loadTemplate, replaceBody, fetchJson} from '../../loadingFunctions.js';
 
 loadLoginBody();
 

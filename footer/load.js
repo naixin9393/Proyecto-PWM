@@ -1,6 +1,6 @@
-import { loadTemplate} from '/loadingFunctions.js';
+import { loadTemplate } from '../loadingFunctions.js';
 
-document.addEventListener('DOMContentLoaded', async function() {
+export async function loadFooter(){
     let footer = await loadTemplate('/footer/Footer.html');
     document.getElementById('footer').appendChild(footer);
-});
+}

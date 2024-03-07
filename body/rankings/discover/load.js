@@ -1,9 +1,5 @@
-import {loadTemplate, replaceBody} from '/loadingFunctions.js';
-import { loadTopRankingBody } from "/body/rankings/top_ranking/load.js";
-
-document.addEventListener('DOMContentLoaded', async function() {
-    await loadDiscoverBody();
-});
+import { loadTemplate, replaceBody } from '../../../loadingFunctions.js';
+import { loadTopRankingBody } from '../top_ranking/load.js';
 
 export async function loadDiscoverBody() {
     let discoverPage = await loadTemplate('/body/rankings/discover/discover_page.html');

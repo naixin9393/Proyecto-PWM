@@ -70,6 +70,13 @@ async function loadPasswordTextField(loginForm, text) {
     input.querySelector('.text-field').placeholder = text;
     input.querySelector('.text-field').type = 'password';
     input.querySelector('.text-field-icon').src = '/images/password.png';
+
+    let inputField = input.querySelector('.input');
+    let eyeImage = document.createElement('img');
+    eyeImage.src = '/images/eye.png';
+    eyeImage.id = 'eye-icon';
+    inputField.appendChild(eyeImage);
+
     loginForm.querySelector('.input-container').appendChild(input);
 }
 

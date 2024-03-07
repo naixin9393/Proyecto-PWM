@@ -3,6 +3,7 @@ import { loadHomeBody } from '../body/home/load.js';
 import { loadLoginBody } from '../body/login/load.js';
 import { loadDiscoverBody } from '../body/rankings/discover/load.js';
 import { loadMyRankingsBody } from '../body/rankings/my_rankings/load.js';
+import { loadProfileBody} from "../body/Profile/load.js";
 
 export async function loadHeader() {
         let header = await loadTemplate('/header/Header.html');
@@ -25,5 +26,9 @@ function loadButtonsActions() {
 
     document.getElementById('Button_Rankings').addEventListener('click', async function() {
         await loadMyRankingsBody();
+    });
+
+    document.getElementById('Button_Profile').addEventListener('click', async function() {
+        await loadProfileBody();
     });
 }

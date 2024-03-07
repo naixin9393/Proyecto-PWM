@@ -1,0 +1,83 @@
+body {
+    background-color: #cdcdc0;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: left;
+    font-size: 24px;
+    color: #B38867;
+
+}
+h1::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+
+}
+#foto {
+    width: 15%;
+}
+.profile-info {
+
+    background-color: #F2E8E1;
+    padding: 20px;
+    border-radius: 10px;
+    width:50%;
+}
+
+
+.edit-button {
+    text-align: center;
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+#edit-profile {
+    font-family:sans-serif;
+    background-color: #626D71;
+    border-color: transparent;
+    color:white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#edit-interface {
+    font-family:sans-serif;
+    background-color: #626D71;
+    border-color: transparent;
+    color:white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.interface-config {
+    margin-top: 40px;
+    text-align: left;
+}
+#Interface {
+    text-align: left;
+    font-size: 24px;
+    color: #B38867;
+
+}
+p::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
+}

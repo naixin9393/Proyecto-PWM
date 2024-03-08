@@ -16,3 +16,10 @@
     transition: all ease-in-out .5s;
     margin-right: -2rem;
 }
+.discovery_category {
+    background-color: #F2E8E1;
+    display:inline-flex;
+    text-align: center;
+    width: 45%;
+    margin: 1em;
+}

@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Bohemian Rhapsody",
+      "author": "Queen",
+      "value": 10
+    },
+    {
+      "name": "Hotel California",
+      "author": "Eagles",
+      "value": 9
+    },
+    {
+      "name": "Imagine",
+      "author": "John Lennon",
+      "value": 8
+    },
+    {
+      "name": "Stairway to Heaven",
+      "author": "Led Zeppelin",
+      "value": 9
+    },
+    {
+      "name": "Like a Rolling Stone",
+      "author": "Bob Dylan",
+      "value": 8
+    }
+]

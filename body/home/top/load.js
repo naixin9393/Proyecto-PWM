@@ -1,4 +1,5 @@
-import { loadTemplate, fetchJson } from '../../../loadingFunctions.js';
+import { loadTemplate, fetchJson } from "../../../loadingFunctions.js";
+import { loadDetailBody } from "../../detail/load.js";
 
 export async function loadTop(category) {
     let top = await loadTemplate('/body/home/top/top.html');
@@ -15,5 +16,9 @@ async function loadTopItem(item, topSection) {
     let topItem = await loadTemplate('/body/home/top/top-item.html')
     topItem.querySelector('.image').src = item.image;
     topItem.querySelector('.top-item-title').textContent = item.name;
+
+    topItem.querySelector('.image').addEventListener('click', async function() {
+        loadDetailBody();
+    });
     topSection.querySelector('.horizontal-scroll-view').appendChild(topItem);
 }

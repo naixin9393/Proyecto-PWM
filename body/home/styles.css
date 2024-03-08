@@ -1,7 +1,8 @@
 #tops-section {
     display: flex;
     flex-direction: column;
-    padding: 4em;
+    padding-left: 10em;
+    padding-right: 10em;
 }
 
 #best-rated-text-container {

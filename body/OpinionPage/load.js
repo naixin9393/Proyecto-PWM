@@ -1,4 +1,4 @@
-import {loadTemplate, replaceBody} from '/loadingFunctions.js';
+import { loadTemplate, replaceBody } from "/loadingFunctions.js";
 
 export async function loadOpinionBody() {
     let opinion = await loadTemplate('./body/OpinionPage/OpinionPage.html');

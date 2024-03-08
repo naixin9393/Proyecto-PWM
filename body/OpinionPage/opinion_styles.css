@@ -1,0 +1,56 @@
+body {
+    background-color: #cdcdc0;
+    font-family: sans-serif;
+}
+h1 {
+    text-align: left;
+    font-size: 60px;
+    color: #B38867;
+    margin-left: 15px;
+
+}
+h1::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
+}
+.edit-button {
+    text-align: center;
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+}
+#Button_Edit {
+    font-family:sans-serif;
+    background-color: #626D71;
+    border-color: transparent;
+    color:white;
+    border-radius: 8px;
+    padding: 10px;
+}
+.Opinion_Elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+
+}
+
+#Book_Info {
+    align-items: center;
+    display: inline;
+}
+
+#Book_Image {
+    width: 15%;
+}
+
+#Book_Title {
+    color: #7A695D;
+    font-size: 130%;
+}

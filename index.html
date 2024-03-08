@@ -15,14 +15,14 @@
 </body>
 
 <script type="module">
-    //import { loadHomeBody } from './body/home/load.js';
+    import { loadHomeBody } from './body/home/load.js';
     import { loadHeader } from './header/load.js';
     import { loadFooter } from './footer/load.js';
     import { loadProfileBody } from './body/Profile/load.js';
 
     document.addEventListener('DOMContentLoaded', async function() {
         loadHeader();
-        //loadHomeBody();
+        loadHomeBody();
         loadFooter();
         loadProfileBody();
     });

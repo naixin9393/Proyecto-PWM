@@ -1,0 +1,84 @@
+#detail {
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    padding-left: 10em;
+    padding-right: 10em;
+}
+
+#detail-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.vertical-crop-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 25em;
+    overflow: hidden;
+    margin: 0;
+}
+
+#detail-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#detail-score {
+    display: flex;
+    flex-direction: column;
+    background: #f2e8e1;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    justify-content: center;
+    gap: 1em;
+    font-weight: bolder;
+}
+
+#detail-add-button {
+    background: #1F506B;
+    color: white;
+    padding: 0.5em 1em;
+    width: 7em;
+    border-radius: 1em;
+    border: none;
+}
+
+#detail-summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 150em;
+}
+
+#synopsis-container {
+    display: flex;
+    flex-direction: column;
+    height: 14em;
+}
+
+#textarea-synopsis {
+    max-width: 40em;
+    max-height: 10em;
+    height: 100%;
+}
+
+#detail-image {
+    border-radius: 1em;
+}
+
+#available-list {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}
+
+.available-image {
+    height: 40px;
+}

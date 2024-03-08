@@ -3,21 +3,6 @@ body {
     font-family: sans-serif;
 }
 
-h1 {
-    text-align: left;
-    font-size: 24px;
-    color: #B38867;
-    margin-left: 15px;
-
-}
-h1::after {
-    display:block;
-    content: '';
-    background-color: #f2e8e1;
-    height: 1px;
-    width: 100%;
-}
-
 .profile {
     display: flex;
     align-items: center;
@@ -26,8 +11,8 @@ h1::after {
     padding: 20px;
     width: 100%;
     height: auto;
-
 }
+
 #foto {
     width: 15%;
 }

@@ -3,6 +3,26 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-size: 2em;
+    color: #B38867;
+    padding-left: 3em;
+}
+
+h1::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .vertical-entry{
     background-color: #F2E8E1;
     margin: 5px;
@@ -117,9 +137,4 @@ textarea {
     color: #646464;
     padding: 0.7rem 1rem;
     border-radius: 1em;
-}
-
-figure {
-    justify-content: center;
-    align-items: center;
 }

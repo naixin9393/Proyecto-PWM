@@ -57,6 +57,15 @@
     font-weight: bold;
 }
 
+.input-label {
+    font-size: 1.5em;
+    font-family: inter, sans-serif;
+    font-weight: bolder;
+    background: #f2e8e1;
+    padding: 0.6em;
+    border-radius: 0.5em;
+}
+
 #add-content-cancel-button {
     background-color: #f2e8e1;
     color: black;

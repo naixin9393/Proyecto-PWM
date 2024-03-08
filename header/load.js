@@ -1,10 +1,11 @@
-import { loadTemplate } from '../loadingFunctions.js';
-import { loadHomeBody } from '../body/home/load.js';
-import { loadLoginBody } from '../body/login/load.js';
-import { loadDiscoverBody } from '../body/rankings/discover/load.js';
-import { loadMyRankingsBody } from '../body/rankings/my_rankings/load.js';
+import { loadTemplate } from "../loadingFunctions.js";
+import { loadHomeBody } from "../body/home/load.js";
+import { loadLoginBody } from "../body/login/load.js";
+import { loadDiscoverBody } from "../body/rankings/discover/load.js";
+import { loadMyRankingsBody } from "../body/rankings/my_rankings/load.js";
 import { loadProfileBody} from "../body/Profile/load.js";
 import { loadOpinionBody} from "../body/OpinionPage/load.js";
+import { loadAddContentBody } from "../body/add-content/load.js";
 
 export async function loadHeader() {
         let header = await loadTemplate('/header/Header.html');
@@ -35,5 +36,9 @@ function loadButtonsActions() {
 
     document.getElementById('Button_Opinion').addEventListener('click', async function() {
         await loadOpinionBody();
+    });
+
+    document.getElementById('Button_Add').addEventListener('click', async function() {
+        await loadAddContentBody();
     });
 }

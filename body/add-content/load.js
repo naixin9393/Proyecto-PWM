@@ -1,8 +1,6 @@
 import {loadTemplate, replaceBody, fetchJson} from '../../loadingFunctions.js';
 
-loadLoginBody();
-
-export async function loadLoginBody() {
+export async function loadAddContentBody() {
     let page = await loadTemplate('/body/add-content/add-content.html');
     loadTitle(page, 'Add Book/Movie/Series');
     page.querySelector('.landscape-image').src = '/images/sample.jpg';
@@ -11,10 +9,24 @@ export async function loadLoginBody() {
     replaceBody(page);
 }
 
+async function loadTitleLabel(form) {
+    let label = document.createElement('label');
+    label.textContent = 'Title: title';
+    label.className = 'input-label';
+    form.querySelector('.input-container').appendChild(label);
+}
+
+async function loadAuthorLabel(form) {
+    let label = document.createElement('label');
+    label.textContent = 'Author: author';
+    label.className = 'input-label';
+    form.querySelector('.input-container').appendChild(label);
+}
+
 async function loadForm() {
     let form = await loadTemplate('/body/add-content/form.html');
-    await loadComboBox(form, 'content');
-    await loadComboBox(form, 'author');
+    await loadTitleLabel(form);
+    await loadAuthorLabel(form);
     loadReviewField(form);
     await loadComboBox(form, 'score');
     loadButtonContainer(form);

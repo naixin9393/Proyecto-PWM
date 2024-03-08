@@ -3,22 +3,22 @@ import {loadTemplate, replaceBody} from '/loadingFunctions.js';
 export async function loadDetailBody() {
     let page = await loadTemplate('/body/detail/detail.html');
 
-    loadDetailContainer(page);
-    //loadReviews
+    loadSummarySection(page);
+    loadReviewsSection(page);
 
     replaceBody(page);
 }
 
-function loadDetailContainer(page) {
-    let detailSection = page.querySelector('#detail');
-    detailSection.querySelector('#detail-image').src = '/images/sample.jpg';
+function loadSummarySection(page) {
+    let detailSection = page.querySelector('#summary');
+    detailSection.querySelector('#summary-image').src = '/images/sample.jpg';
 
     loadButtonContainer(detailSection);
     loadInformationContainer(detailSection);
 }
 
 function loadButtonContainer(detailSection) {
-    let buttonContainer = detailSection.querySelector('#detail-button-container');
+    let buttonContainer = detailSection.querySelector('#summary-button-container');
 
     let score = document.createElement('label');
     score.textContent = 'Score: 5⭐';
@@ -33,7 +33,7 @@ function loadButtonContainer(detailSection) {
 }
 
 function loadInformationContainer(detailSection) {
-    let summaryContainer = detailSection.querySelector('#detail-summary-container');
+    let summaryContainer = detailSection.querySelector('#summary-information-container');
     loadSynopsis(summaryContainer);
     loadInformation(summaryContainer);
     loadAvailable(summaryContainer);
@@ -93,4 +93,30 @@ function loadAvailable(summaryContainer) {
 
     available.appendChild(title);
     available.appendChild(availableList);
+}
+
+function loadReviewsSection(page) {
+    let reviewsContainer = page.querySelector('#reviews-container');
+    loadReviews(reviewsContainer);
+}
+
+async function loadReviews(reviewsContainer) {
+    loadReview(reviewsContainer);
+    loadReview(reviewsContainer);
+    loadReview(reviewsContainer);
+}
+
+async function loadReview(reviewsContainer) {
+    let review = await loadTemplate('/body/detail/review.html');
+    let userContainer = review.querySelector('.user-container');
+    userContainer.querySelector('.user-image').src = '/images/profile.png';
+    userContainer.querySelector('.user-score').textContent = '5⭐';
+
+    let reviewTextAreaContainer = review.querySelector('.review-container');
+    let reviewTextArea = document.createElement('textarea');
+    reviewTextArea.className = 'user-textarea';
+    reviewTextArea.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+    reviewTextArea.readOnly = true;
+    reviewTextAreaContainer.appendChild(reviewTextArea);
+    reviewsContainer.appendChild(review);
 }

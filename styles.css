@@ -6,7 +6,6 @@ body {
 h1 {
     font-size: 2em;
     color: #B38867;
-    padding-left: 3em;
 }
 
 h1::after {

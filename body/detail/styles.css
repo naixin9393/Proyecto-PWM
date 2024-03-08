@@ -1,4 +1,4 @@
-#detail {
+#summary, .review {
     display: flex;
     gap: 5em;
     justify-content: center;
@@ -6,7 +6,7 @@
     padding-right: 10em;
 }
 
-#detail-image-container {
+#summary-image-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,13 +24,13 @@
     margin: 0;
 }
 
-#detail-button-container {
+#summary-button-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
 
-#detail-score {
+#detail-score, .user-score {
     display: flex;
     flex-direction: column;
     background: #f2e8e1;
@@ -50,7 +50,7 @@
     border: none;
 }
 
-#detail-summary-container {
+#summary-information-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -60,16 +60,18 @@
 #synopsis-container {
     display: flex;
     flex-direction: column;
+    max-width: 40em;
+    width: 100%;
     height: 14em;
 }
 
-#textarea-synopsis {
-    max-width: 40em;
+#textarea-synopsis, .user-textarea {
     max-height: 10em;
+    width: 100%;
     height: 100%;
 }
 
-#detail-image {
+#summary-image {
     border-radius: 1em;
 }
 
@@ -81,4 +83,44 @@
 
 .available-image {
     height: 40px;
+}
+
+#summary-section, #reviews-section {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3em;
+}
+
+#reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.user-name {
+    font-family: inter, sans-serif;
+    font-weight: bolder;
+    font-size: 2em;
+    margin: 0;
+}
+
+.user-image {
+    width: 5em;
+    height: 5em;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 40em;
+    width: 100%;
+    justify-content: center;
 }

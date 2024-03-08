@@ -53,8 +53,8 @@ async function loadComboBox(form, data) {
 
 function loadReviewField(form) {
     let review = document.createElement('textarea');
-    review.placeholder = 'Write a review';
-    review.id = 'add-content-review-textarea';
+    review.placeholder = 'Write a review.html';
+    review.id = 'add-content-review.html-textarea';
     form.querySelector('.input-container').appendChild(review);
 }
 

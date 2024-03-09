@@ -1,8 +1,9 @@
 import {fetchJson, loadTemplate, replaceBody} from '../../../loadingFunctions.js';
 
-export async function loadTopRankingBody() {
+export async function loadTopRankingBody(topName) {
     let topRankingPage = await loadTemplate('/body/rankings/top_ranking/top_ranking.html');
     await replaceBody(topRankingPage);
+    document.getElementById('top_name').innerText = topName;
     addTopEntries('/body/rankings/top_ranking/data.json')
 }
 async function addTopEntries(url) {

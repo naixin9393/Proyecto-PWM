@@ -12,7 +12,7 @@ function prepareLinks(){
     for (let i = 0; i < categories.length; i++) {
         categories.item(i).addEventListener('click',
             async function () {
-                await loadTopRankingBody();
+                await loadTopRankingBody(categories.item(i).querySelector('h1').innerText);
             });
     }
 }

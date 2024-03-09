@@ -1,7 +1,19 @@
+.your_tops_category_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .your_tops_category {
     background-color: #F2E8E1;
     display:inline-flex;
     text-align: center;
-    width: 45%;
+    align-items: center;
+    width: 40%;
+    height: 10em;
     margin: 1em;
+}
+.your_tops_category h1 {
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -1,5 +1,5 @@
 import { loadTemplate, replaceBody } from "/loadingFunctions.js";
-import {loadEditOpinionBody} from "../EditOpinion/Actions.js";
+import {loadEditOpinionBody} from "../EditOpinion/load.js";
 
 export async function loadOpinionBody() {
     let opinion = await loadTemplate('./body/OpinionPage/OpinionPage.html');

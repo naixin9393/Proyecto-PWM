@@ -41,16 +41,34 @@ h1::after {
 
 }
 
+.Opinion_image{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 20px;
+    padding: 20px;
+}
+
 #Book_Info {
     align-items: center;
     display: inline;
 }
 
 #Book_Image {
-    width: 15%;
+    width: 75%;
 }
 
 #Book_Title {
     color: #7A695D;
     font-size: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Opinion_Text_Area{
+    width: 450px;
+    height: 300px;
+    background-color: #f2e8e1;
+    border-radius:8px;
+    border-color:transparent;
 }

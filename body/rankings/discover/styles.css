@@ -1,7 +1,7 @@
 .discovery_container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    justify-items: left;
 }
 .search__input {
     width: 100%;

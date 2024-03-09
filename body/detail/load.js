@@ -1,4 +1,5 @@
-import {loadTemplate, replaceBody} from '/loadingFunctions.js';
+import {loadTemplate, replaceBody} from "/loadingFunctions.js";
+import {loadAddContentBody} from "../add-content/load.js";
 
 export async function loadDetailBody() {
     let page = await loadTemplate('/body/detail/detail.html');
@@ -27,6 +28,9 @@ function loadButtonContainer(detailSection) {
     let addButton = document.createElement('button');
     addButton.textContent = 'Add to my ranking';
     addButton.id = 'detail-add-button';
+    addButton.addEventListener('click', function() {
+        loadAddContentBody();
+    });
 
     buttonContainer.appendChild(score);
     buttonContainer.appendChild(addButton);

@@ -1,4 +1,4 @@
-import {loadTemplate, replaceBody} from '/loadingFunctions.js';
+import { loadTemplate, replaceBody } from "/loadingFunctions.js";
 
 export async function loadLoginBody() {
     let page = await loadTemplate('/body/login/login.html');

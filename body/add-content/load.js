@@ -1,4 +1,5 @@
-import {loadTemplate, replaceBody, fetchJson} from '../../loadingFunctions.js';
+import { loadTemplate, replaceBody, fetchJson } from "../../loadingFunctions.js";
+import { loadDetailBody } from "../detail/load.js";
 
 export async function loadAddContentBody() {
     let page = await loadTemplate('/body/add-content/add-content.html');
@@ -53,8 +54,8 @@ async function loadComboBox(form, data) {
 
 function loadReviewField(form) {
     let review = document.createElement('textarea');
-    review.placeholder = 'Write a review.html';
-    review.id = 'add-content-review.html-textarea';
+    review.placeholder = 'Write a review';
+    review.id = 'add-content-review-textarea';
     form.querySelector('.input-container').appendChild(review);
 }
 
@@ -65,6 +66,9 @@ function loadButtonContainer(form) {
     let cancelButton = document.createElement('button');
     cancelButton.id = 'add-content-cancel-button';
     cancelButton.textContent = 'Cancel';
+    cancelButton.addEventListener('click', function() {
+        loadDetailBody();
+    });
 
     let addToRankingButton = document.createElement('button');
     addToRankingButton.id = 'add-content-add-to-ranking-button';

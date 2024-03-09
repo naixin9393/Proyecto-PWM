@@ -1,20 +1,7 @@
 #add-content-page {
     display: flex;
     flex-direction: column;
-}
-
-.add-content-title {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #B38867;
-}
-
-.add-content-title::after {
-    display:block;
-    content: '';
-    background-color: #f2e8e1;
-    height: 1px;
-    width: 100%;
+    padding-left: 10em;
 }
 
 .add-content-container {

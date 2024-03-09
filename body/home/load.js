@@ -1,6 +1,6 @@
-import { loadTop } from './top/load.js';
-import {loadTemplate, replaceBody} from '../../loadingFunctions.js';
-import {loadWelcome} from './welcome/load.js';
+import { loadTop } from "./top/load.js";
+import { loadTemplate, replaceBody } from "../../loadingFunctions.js";
+import { loadWelcome } from "./welcome/load.js";
 
 export async function loadHomeBody() {
     let homePage = await loadTemplate('/body/home/home.html');
@@ -12,7 +12,7 @@ export async function loadHomeBody() {
 async function loadTops(homePage) {
     let topsSection = homePage.querySelector('#tops-section');
     let bestRatedTextContainer = homePage.querySelector('#best-rated-text-container');
-    let bestRatedText = document.createElement('p');
+    let bestRatedText = document.createElement('h1');
     bestRatedText.textContent = 'Best rated';
     bestRatedText.id = 'best-rated-text';
     bestRatedTextContainer.appendChild(bestRatedText);

@@ -1,5 +1,5 @@
-import { loadTemplate } from '../../../loadingFunctions.js';
-import { loadLoginBody } from '../../login/load.js';
+import { loadTemplate } from "../../../loadingFunctions.js";
+import { loadLoginBody } from "../../login/load.js";
 
 export async function loadWelcome(homePage) {
     let welcome = await loadTemplate('/body/home/welcome/welcome.html');

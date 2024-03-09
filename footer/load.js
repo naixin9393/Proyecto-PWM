@@ -4,7 +4,7 @@ export async function loadFooter(){
     let footer = await loadTemplate('/footer/footer.html');
     loadSocialMediaIcons(footer);
     loadContactInfo(footer);
-    document.getElementById('footer-container').appendChild(footer);
+    document.getElementById('footer').appendChild(footer);
 }
 
 function loadSocialMediaIcons(footer) {

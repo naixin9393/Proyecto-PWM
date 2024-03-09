@@ -1,4 +1,10 @@
 
+import { loadTemplate, replaceBody } from "/loadingFunctions.js";
+
+export async function loadEditOpinionBody() {
+    let editOpinion = await loadTemplate('./body/EditOpinion/EditOpinionPage.html');
+    replaceBody(editOpinion);
+}
     document.addEventListener("DOMContentLoaded", function(){
         var DoneButton = document.getElementById('Button_Done');
         if(DoneButton){

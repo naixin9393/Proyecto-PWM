@@ -1,12 +1,9 @@
-body {
-    background-color: #cdcdc0;
-    font-family: sans-serif;
-}
+
 h1 {
-    text-align: left;
-    font-size: 60px;
-    color: #B38867;
-    margin-left: 15px;
+    margin-left:5%;
+    color: #b38867;
+    font-size:280%;
+    margin-bottom: 1%;
 
 }
 h1::after {

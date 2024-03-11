@@ -1,6 +1,17 @@
-body {
-    background-color: #cdcdc0;
-    font-family: sans-serif;
+
+h1 {
+    margin-left:5%;
+    color: #b38867;
+    font-size:280%;
+    margin-bottom: 1%;
+
+}
+h1::after {
+    display:block;
+    content: '';
+    background-color: #f2e8e1;
+    height: 1px;
+    width: 100%;
 }
 
 .profile {
@@ -13,8 +24,17 @@ body {
     height: auto;
 }
 
+.profile-img{
+
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-top: 20px;
+        padding: 20px;
+}
+
 #foto {
-    width: 15%;
+    width: 75%;
 }
 .profile-info {
 

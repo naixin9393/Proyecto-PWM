@@ -2,7 +2,7 @@ import { loadTemplate, replaceBody } from "/loadingFunctions.js";
 
 export async function loadLoginBody() {
     let page = await loadTemplate('/body/login/login.html');
-    page.querySelector('.landscape-image').src = '/images/sample.jpg';
+    page.querySelector('.landscape-image-figure').src = '/images/sample.jpg';
 
     let formContainer = page.querySelector('#form-container');
     await loadLoginForm(formContainer);
@@ -75,29 +75,21 @@ function loadTitle(loginForm, text) {
 
 async function loadUsernameInput(loginForm) {
     let input = await loadTemplate('/body/login/input/input.html');
-    input.querySelector('.text-field').placeholder = 'Username';
+    input.querySelector('.form-control').placeholder = 'Username';
     input.querySelector('.text-field-icon').src = '/images/username.png';
     loginForm.querySelector('.input-container').appendChild(input);
 }
 
 async function loadPasswordInput(loginForm, text) {
     let input = await loadTemplate('/body/login/input/input.html');
-    input.querySelector('.text-field').placeholder = text;
-    input.querySelector('.text-field').type = 'password';
+    input.querySelector('.form-control').placeholder = text;
+    input.querySelector('.form-control').type = 'password';
     input.querySelector('.text-field-icon').src = '/images/password.png';
-
-    let inputField = input.querySelector('.input');
-    let eyeImage = document.createElement('img');
-    eyeImage.src = '/images/eye.png';
-    eyeImage.id = 'eye-icon';
-    inputField.appendChild(eyeImage);
-
+    input.querySelector('.input');
     loginForm.querySelector('.input-container').appendChild(input);
 }
 
 function loadButton(loginForm, text) {
-    let button = document.createElement('button');
-    button.className = 'form-button';
+    let button = loginForm.querySelector('#button');
     button.textContent = text;
-    loginForm.querySelector('.button-container').appendChild(button);
 }

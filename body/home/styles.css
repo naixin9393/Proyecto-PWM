@@ -1,6 +1,7 @@
 #tops-section {
     display: flex;
     flex-direction: column;
+    gap: 2em;
     padding-left: 10em;
     padding-right: 10em;
 }

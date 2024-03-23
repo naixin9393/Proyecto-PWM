@@ -27,7 +27,7 @@ function loadButtonContainer(detailSection) {
 
     let addButton = document.createElement('button');
     addButton.textContent = 'Add to my ranking';
-    addButton.id = 'detail-add-button';
+    addButton.className = 'button btn btn-primary';
     addButton.addEventListener('click', function() {
         loadAddContentBody();
     });
@@ -48,11 +48,11 @@ function loadSynopsis(summaryContainer) {
 
     let title = document.createElement('h2');
     title.textContent = 'Synopsis';
+    title.className = 'text text-secondary';
 
-    let textArea = document.createElement('textarea');
+    let textArea = document.createElement('p');
     textArea.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
     textArea.id = 'textarea-synopsis';
-    textArea.readOnly = true;
 
     synopsis.appendChild(title);
     synopsis.appendChild(textArea);
@@ -62,13 +62,16 @@ function loadInformation(summaryContainer) {
     let information = summaryContainer.querySelector('#information-container');
 
     let title = document.createElement('h2');
+    title.className = 'text text-secondary';
     title.textContent = 'Information';
 
     let informationList = document.createElement('ul');
+    informationList.className = 'list-group';
     let informationItems = ['Type: book', 'Author: author', 'Release date: date', 'Genre: genre'];
     for (let item of informationItems) {
         let listItem = document.createElement('li');
         listItem.textContent = item;
+        listItem.className = 'list-group-item';
         informationList.appendChild(listItem);
     }
 
@@ -81,9 +84,10 @@ function loadAvailable(summaryContainer) {
 
     let title = document.createElement('h2');
     title.textContent = 'Available at';
+    title.className = 'text text-secondary';
 
     let availableList = document.createElement('ul');
-    availableList.id = 'available-list';
+    availableList.className = 'd-flex gap-3';
     let availableItems = ['youtube.png', 'amazon.png', 'netflix.png', 'spotify.png'];
     for (let item of availableItems) {
         let listItem = document.createElement('li');
@@ -117,10 +121,9 @@ async function loadReview(reviewsContainer) {
     userContainer.querySelector('.user-score').textContent = '5⭐';
 
     let reviewTextAreaContainer = review.querySelector('.review-container');
-    let reviewTextArea = document.createElement('textarea');
+    let reviewTextArea = document.createElement('p');
     reviewTextArea.className = 'user-textarea';
     reviewTextArea.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
-    reviewTextArea.readOnly = true;
     reviewTextAreaContainer.appendChild(reviewTextArea);
     reviewsContainer.appendChild(review);
 }

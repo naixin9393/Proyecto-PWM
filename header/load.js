@@ -7,7 +7,7 @@ import { loadProfileBody } from "../body/Profile/load.js";
 import { loadOpinionBody } from "../body/OpinionPage/load.js";
 
 export async function loadHeader() {
-        let header = await loadTemplate('/header/Header.html');
+        let header = await loadTemplate('/header/header.html');
         document.getElementById('header').appendChild(header);
         loadButtonsActions();
     }

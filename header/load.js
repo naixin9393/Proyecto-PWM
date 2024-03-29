@@ -4,10 +4,10 @@ import { loadLoginBody } from "../body/login/load.js";
 import { loadDiscoverBody } from "../body/rankings/discover/load.js";
 import { loadMyRankingsBody } from "../body/rankings/my_rankings/load.js";
 import { loadProfileBody } from "../body/Profile/load.js";
-import { loadOpinionBody } from "../body/OpinionPage/load.js";
+import { loadOpinionBody } from "../body/opinionPage/load.js";
 
 export async function loadHeader() {
-        let header = await loadTemplate('/header/header.html');
+        let header = await loadTemplate('/header/Header.html');
         document.getElementById('header').appendChild(header);
         loadButtonsActions();
     }
@@ -35,5 +35,13 @@ function loadButtonsActions() {
 
     document.getElementById('Button_Opinion').addEventListener('click', async function() {
         await loadOpinionBody();
+    });
+    loadMenuToggle();
+}
+
+function loadMenuToggle(){
+    document.querySelector('#menu-button').addEventListener('click', async function() {
+        let dropdown_menu= document.querySelector(".dropdown-menu")
+            dropdown_menu.style.display = 'block';
     });
 }

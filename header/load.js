@@ -37,7 +37,35 @@ function loadButtonsActions() {
     document.getElementById('Button_Opinion').addEventListener('click', async function() {
         await loadOpinionBody();
     });
+
     loadMenuToggle();
+    loadSmallButtonsActions();
+}
+
+function loadSmallButtonsActions(){
+    document.getElementById('login_small_button').addEventListener('click', async function() {
+        await loadLoginBody();
+    });
+
+    document.getElementById('mistops_small_button').addEventListener('click', async function() {
+        await loadHomeBody();
+    });
+
+    document.getElementById('discover_small_button').addEventListener('click', async function() {
+        await loadDiscoverBody();
+    });
+
+    document.getElementById('ranking_small_button').addEventListener('click', async function() {
+        await loadMyRankingsBody();
+    });
+
+    document.getElementById('profile_small_button').addEventListener('click', async function() {
+        await loadProfileBody();
+    });
+
+    document.getElementById('opinion_small_button').addEventListener('click', async function() {
+        await loadOpinionBody();
+    });
 }
 
 function loadMenuToggle(){

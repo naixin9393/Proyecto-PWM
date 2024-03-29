@@ -1,55 +1,73 @@
-import { loadTemplate } from "../loadingFunctions.js";
-import { loadHomeBody } from "../body/home/load.js";
-import { loadLoginBody } from "../body/login/load.js";
-import { loadDiscoverBody } from "../body/rankings/discover/load.js";
-import { loadMyRankingsBody } from "../body/rankings/my_rankings/load.js";
-import { loadProfileBody } from "../body/Profile/load.js";
-import { loadOpinionBody } from "../body/opinionPage/load.js";
 
-export async function loadHeader() {
-        let header = await loadTemplate('/header/Header.html');
-        document.getElementById('header').appendChild(header);
-        document.querySelector('.dropdown-menu').style.display = 'none';
-        loadButtonsActions();
-    }
-
-function loadButtonsActions() {
-    document.getElementById('Button_Log_in').addEventListener('click', async function() {
-        await loadLoginBody();
-    });
-
-    document.getElementById('Button_Mis_Tops').addEventListener('click', async function() {
-        await loadHomeBody();
-    });
-
-    document.getElementById('Button_Discover').addEventListener('click', async function() {
-        await loadDiscoverBody();
-    });
-
-    document.getElementById('Button_Rankings').addEventListener('click', async function() {
-        await loadMyRankingsBody();
-    });
-
-    document.getElementById('Button_Profile').addEventListener('click', async function() {
-        await loadProfileBody();
-    });
-
-    document.getElementById('Button_Opinion').addEventListener('click', async function() {
-        await loadOpinionBody();
-    });
-    loadMenuToggle();
-
-    document.getElementById('opinion_small_button').addEventListener('click', async function() {
-        await loadOpinionBody();
-    });
-
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-function loadMenuToggle(){
-    document.querySelector('#menu-button').addEventListener('click', async function() {
-        let dropdown_menu= document.querySelector(".dropdown-menu")
-        alert(dropdown_menu.style.display);
-        dropdown_menu.style.display = 'block';
+#Button_Mis_Tops {
+    color:#B38867;
+    font-size:200%;
+}
 
-    });
+*{
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+}
+#Header_Buttons {
+    display: flex;
+    text-align:right;
+    gap: 3em;
+}
+
+#Button_Log_in {
+    font-family: inter, sans-serif;
+    background-color: #626D71;
+    color:white;
+    border-radius: 8px;
+    padding: 7px 1em;
+    font-size:130%;
+}
+
+.header_buttons_small{
+    display:none;
+}
+@media screen and (max-width:768px) {
+    #Button_Mis_Tops {
+        display: none;
+    }
+    #Header_Buttons {
+        display: none;
+    }
+    .header_buttons_small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header_buttons_small .dropdown {
+        display: block;
+    }
+
+    .dropdown-menu{
+        display:none;
+    }
+
+    .header_buttons_small #Button_Mis_Tops {
+        color: #B38867;
+        font-size: 130%;
+    }
+
+    .header_buttons_small .btn {
+        background-color: transparent;
+        border: none;
+        color: #000000;
+    }
+
+    .menu-icon, .small-icon {
+        width: 2em;
+        height: 2em;
+    }
 }

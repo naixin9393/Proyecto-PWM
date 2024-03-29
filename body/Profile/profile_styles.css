@@ -1,5 +1,5 @@
 
-h1 {
+#profile-main-text {
     margin-left:5%;
     color: #b38867;
     font-size:280%;
@@ -14,74 +14,36 @@ h1::after {
     width: 100%;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 20px;
-    width: 100%;
-    height: auto;
-}
-
-.profile-img{
-
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        margin-top: 20px;
-        padding: 20px;
-}
-
-#foto {
-    width: 75%;
-}
-.profile-info {
+#profile-info {
 
     background-color: #F2E8E1;
     padding: 20px;
     border-radius: 10px;
-    width:50%;
+    height: auto;
 }
-
 
 .edit-button {
     text-align: center;
-    margin-top: 20px;
-    background-color: transparent;
-    border: none;
-}
-
-#edit-profile {
     font-family:sans-serif;
     background-color: #626D71;
     border-color: transparent;
     color:white;
     border-radius: 8px;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
-#edit-interface {
-    font-family:sans-serif;
-    background-color: #626D71;
-    border-color: transparent;
-    color:white;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.interface-config {
+#interface-config {
     margin-top: 40px;
     text-align: left;
 }
 #Interface {
-    text-align: left;
-    font-size: 24px;
-    color: #B38867;
-    margin-left: 15px;
+    margin-left:5%;
+    color: #b38867;
+    font-size:280%;
+    margin-bottom: 1%;
 
 }
-p::after {
+h2::after {
     display:block;
     content: '';
     background-color: #f2e8e1;

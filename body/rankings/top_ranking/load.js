@@ -1,10 +1,12 @@
 import {fetchJson, loadTemplate, replaceBody} from '../../../loadingFunctions.js';
 
+
+
 export async function loadTopRankingBody(topName) {
     let topRankingPage = await loadTemplate('/body/rankings/top_ranking/top_ranking.html');
     await replaceBody(topRankingPage);
     document.getElementById('top_name').innerText = topName;
-    addTopEntries('/body/rankings/top_ranking/data.json')
+    addTopEntries(getJson(topName))
 }
 async function addTopEntries(url) {
     try {
@@ -27,4 +29,10 @@ async function addTopEntries(url) {
         console.error('Error al obtener datos:', error);
         document.querySelector(".scroller").innerHTML = 'Error';
     }
+}
+
+function getJson(topName) {
+    if (topName.toLowerCase().includes('books')) return '/body/rankings/data/books.json';
+    if (topName.toLowerCase().includes('songs')) return '/body/rankings/data/songs.json';
+    if (topName.toLowerCase().includes('films')) return '/body/rankings/data/films.json';
 }

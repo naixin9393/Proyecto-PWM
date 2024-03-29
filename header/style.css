@@ -6,7 +6,7 @@
 }
 
 #Button_Mis_Tops {
-    color:#B38867; 
+    color:#B38867;
     font-size:200%;
 }
 
@@ -23,27 +23,51 @@
 
 #Button_Log_in {
     font-family: inter, sans-serif;
-    background-color: #626D71; 
+    background-color: #626D71;
     color:white;
     border-radius: 8px;
     padding: 7px 1em;
     font-size:130%;
 }
 
-@media screen and (max-width:768px){
-    #header-container{
-        flex-direction: column;
-        align-items: flex-start;
-        display: flex;
-    }
-
-    #Header-Buttons, #Button_Log_in {
-        flex-direction: column;
-        font-size:1em;
-    }
-
+.header_buttons_small{
+    display:none;
+}
+@media screen and (max-width:768px) {
     #Button_Mis_Tops {
-        font-size: 1.5em;
+        display: none;
+    }
+    #Header_Buttons {
+        display: none;
+    }
+    .header_buttons_small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
+    .header_buttons_small .dropdown {
+        display: block;
+    }
+
+    .dropdown-menu{
+        display:none;
+    }
+
+    .header_buttons_small #Button_Mis_Tops {
+        color: #B38867;
+        font-size: 130%;
+    }
+
+    .header_buttons_small .btn {
+        background-color: transparent;
+        border: none;
+        color: #000000;
+    }
+
+    .menu-icon, .small-icon {
+        width: 2em;
+        height: 2em;
+    }
 }

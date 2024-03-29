@@ -9,6 +9,7 @@ import { loadOpinionBody } from "../body/opinionPage/load.js";
 export async function loadHeader() {
         let header = await loadTemplate('/header/Header.html');
         document.getElementById('header').appendChild(header);
+        document.querySelector('.dropdown-menu').style.display = 'none';
         loadButtonsActions();
     }
 
@@ -42,6 +43,10 @@ function loadButtonsActions() {
 function loadMenuToggle(){
     document.querySelector('#menu-button').addEventListener('click', async function() {
         let dropdown_menu= document.querySelector(".dropdown-menu")
-            dropdown_menu.style.display = 'block';
+           if(dropdown_menu.style.display === 'none'){
+               dropdown_menu.style.display = 'block';
+           }else{
+               dropdown_menu.style.display = 'none';
+           }
     });
 }

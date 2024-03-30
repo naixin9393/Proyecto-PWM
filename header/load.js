@@ -45,26 +45,32 @@ function loadButtonsActions() {
 function loadSmallButtonsActions(){
     document.getElementById('login_small_button').addEventListener('click', async function() {
         await loadLoginBody();
+        closeDropdownMenu();
     });
 
     document.getElementById('mistops_small_button').addEventListener('click', async function() {
         await loadHomeBody();
+        closeDropdownMenu();
     });
 
     document.getElementById('discover_small_button').addEventListener('click', async function() {
         await loadDiscoverBody();
+        closeDropdownMenu();
     });
 
     document.getElementById('ranking_small_button').addEventListener('click', async function() {
         await loadMyRankingsBody();
+        closeDropdownMenu();
     });
 
     document.getElementById('profile_small_button').addEventListener('click', async function() {
         await loadProfileBody();
+        closeDropdownMenu();
     });
 
     document.getElementById('opinion_small_button').addEventListener('click', async function() {
         await loadOpinionBody();
+        closeDropdownMenu();
     });
 }
 
@@ -77,4 +83,11 @@ function loadMenuToggle(){
                dropdown_menu.style.display = 'none';
            }
     });
+}
+
+function closeDropdownMenu() {
+    let dropdownMenu = document.querySelector(".dropdown-menu");
+    if(dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+    }
 }

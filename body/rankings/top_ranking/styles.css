@@ -88,3 +88,12 @@
 .scroller::-webkit-scrollbar-thumb:active {
     background-color: #888888;
 }
+
+@media screen and (max-width:1024px){
+    .scroller{
+        width: 100%;
+    }
+    .vertical-entry{
+        width: 100%;
+    }
+}

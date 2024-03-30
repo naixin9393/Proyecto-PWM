@@ -1,9 +1,10 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="/header/style.css">
 <main class="container-fluid" id="header-container">
     <button id="Button_Mis_Tops">
         MisTops
     </button>
-    <div  id="Header_Buttons">
+    <div id="Header_Buttons">
         <button id="Button_Profile">
             Profile
         </button>
@@ -19,6 +20,37 @@
         <button id="Button_Log_in">
             Log in
         </button>
-
     </div>
+
+    <div class="header_buttons_small">
+        <div class="dropdown">
+            <button id="menu-button" type="button" class="btn btn-secondary header-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/images/menu.png"  alt="menu" class="menu-icon">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li  id="profile_small_button" class="btn btn-secondary header-button">
+                    <img src="/images/usersettings.png" alt="profile" class="small-icon">
+                    Profile</li>
+                <li id="opinion_small_button" class="btn btn-secondary header-button">
+                    <img src="/images/opinion.png" alt="opinion" class="small-icon">
+                    Opinion</li>
+                <li id="discover_small_button" class="btn btn-secondary header-button">
+                    <img src="/images/discover.png" alt="discover" class="small-icon">
+                    Discover</li>
+                <li id="ranking_small_button" class="btn btn-secondary header-button">
+                    <img src="/images/heart.png" alt="ranking" class="small-icon">
+                    Rankings
+                </li>
+            </ul>
+        </div>
+
+        <button id="mistops_small_button" type="button" class="btn btn-secondary header-button">
+            MisTops
+        </button>
+
+        <button id="login_small_button" type="button" class="btn btn-secondary header-button">
+            <img src="/images/username.png" alt="Login" class="small-icon">
+        </button>
+    </div>
+
 </main>

@@ -76,7 +76,7 @@ function loadForm(page) {
 }
 
 function loadQuestion(page) {
-	page.querySelector('.question-text').addEventListener('click', async function() {
+	page.querySelector('#question-text').addEventListener('click', async function() {
 		loadLoginBody();
 	});
 }

@@ -9,7 +9,7 @@ export async function loadLoginBody() {
 }
 
 function loadLoginQuestion(page) {
-    let question = page.querySelector('.question-text');
+    let question = page.querySelector('#question-text');
     question.addEventListener('click', async function() {
 		loadSignUpBody();
     });

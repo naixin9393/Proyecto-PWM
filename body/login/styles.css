@@ -1,6 +1,7 @@
 .question-text {
     font-size: 1em;
     cursor: pointer;
+    color: darkblue;
 }
 
 .question-text:hover {

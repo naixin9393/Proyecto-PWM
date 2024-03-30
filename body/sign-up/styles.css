@@ -1,9 +1,10 @@
-.question-text {
+#question-text {
     font-size: 1em;
     cursor: pointer;
+    color: darkblue;
 }
 
-.question-text:hover {
+#question-text:hover {
     text-decoration: underline;
 }
 

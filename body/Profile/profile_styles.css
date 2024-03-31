@@ -50,3 +50,18 @@ h2::after {
     height: 1px;
     width: 100%;
 }
+
+#theme {
+    color: #7A695D;
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#light-mode-button{
+    background-color: #B38867;
+}
+#dark-mode-button{
+    background-color: #936F54;
+}

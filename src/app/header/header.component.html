@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<main class="container-fluid" id="header-container">
+  <button id="Button_Mis_Tops" (click)="loadPrint()">
+    MisTops
+  </button>
+  <div id="Header_Buttons">
+    <button id="Button_Profile"  (click)="loadPrint()">
+      Profile
+    </button>
+    <button id="Button_Opinion"  (click)="loadPrint()">
+      Opinion
+    </button>
+    <button id="Button_Discover" (click)="loadPrint()">
+      Discover
+    </button>
+    <button id="Button_Rankings"  (click)="loadPrint()">
+      My rankings
+    </button>
+    <button id="Button_Log_in">
+      Log in
+    </button>
+  </div>
+
+  <div class="header_buttons_small">
+    <div mdbDropdown class="dropdown">
+      <button id="menu-button" type="button" class="btn btn-secondary header-button dropdown-toggle" mdbDropdownToggle aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
+        <img cImg ngSrc="/assets/images/menu.png"  alt="menu" class="menu-icon" height="512" width="512" priority>
+      </button>
+        <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a mdbDropdownItem class="dropdown-item btn btn secondary header-button" id="profile_small_button">
+            <img cImg ngSrc="/assets/images/usersettings.png" alt="profile" class="small-icon" height="512" width="512">
+            Profile </a></li>
+          <li><a mdbDropdownItem id="opinion_small_button" class="btn btn-secondary header-button">
+            <img cImg ngSrc="/assets/images/opinion.png" alt="opinion" class="small-icon" height="512" width="512">
+            Opinion</a></li>
+          <li><a  mdbDropdownItem id="discover_small_button" class="btn btn-secondary header-button">
+            <img cImg ngSrc="/assets/images/discover.png" alt="discover" class="small-icon" height="512" width="512">
+            Discover</a></li>
+          <li><a  mdbDropdownItem id="ranking_small_button" class="btn btn-secondary header-button">
+            <img cImg ngSrc="/assets/images/heart.png" alt="ranking" class="small-icon" height="512" width="512">
+            Rankings</a></li>
+        </ul>
+    </div>
+
+    <button id="mistops_small_button" type="button" class="btn btn-secondary header-button" >
+      MisTops
+    </button>
+
+    <button id="login_small_button" type="button" class="btn btn-secondary header-button">
+      <img cImg ngSrc="/assets/images/username.png" alt="Login" class="small-icon" height="512" width="512">
+    </button>
+  </div>
+
+</main>

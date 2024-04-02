@@ -1,22 +1,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <main class="container-fluid" id="header-container">
-  <button id="Button_Mis_Tops" (click)="loadPrint()">
+  <button id="Button_Mis_Tops" routerLink="localhost/homepage">
     MisTops
   </button>
   <div id="Header_Buttons">
-    <button id="Button_Profile"  (click)="loadPrint()">
+    <button id="Button_Profile"  routerLink="localhost/profile">
       Profile
     </button>
-    <button id="Button_Opinion"  (click)="loadPrint()">
+    <button id="Button_Opinion"  routerLink="localhost/opinion">
       Opinion
     </button>
-    <button id="Button_Discover" (click)="loadPrint()">
+    <button id="Button_Discover" routerLink="localhost/discover">
       Discover
     </button>
-    <button id="Button_Rankings"  (click)="loadPrint()">
+    <button id="Button_Rankings"  routerLink="localhost/rankings">
       My rankings
     </button>
-    <button id="Button_Log_in">
+    <button id="Button_Log_in" routerLink="localhost/login">
       Log in
     </button>
   </div>
@@ -27,26 +27,26 @@
         <img cImg ngSrc="/assets/images/menu.png"  alt="menu" class="menu-icon" height="512" width="512" priority>
       </button>
         <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a mdbDropdownItem class="dropdown-item btn btn secondary header-button" id="profile_small_button">
+          <li><a mdbDropdownItem class="dropdown-item btn btn secondary header-button" id="profile_small_button"  routerLink="localhost/profile">
             <img cImg ngSrc="/assets/images/usersettings.png" alt="profile" class="small-icon" height="512" width="512">
             Profile </a></li>
-          <li><a mdbDropdownItem id="opinion_small_button" class="btn btn-secondary header-button">
+          <li><a mdbDropdownItem id="opinion_small_button" class="btn btn-secondary header-button" routerLink="localhost/opinion">
             <img cImg ngSrc="/assets/images/opinion.png" alt="opinion" class="small-icon" height="512" width="512">
             Opinion</a></li>
-          <li><a  mdbDropdownItem id="discover_small_button" class="btn btn-secondary header-button">
+          <li><a  mdbDropdownItem id="discover_small_button" class="btn btn-secondary header-button" routerLink="localhost/discover">
             <img cImg ngSrc="/assets/images/discover.png" alt="discover" class="small-icon" height="512" width="512">
             Discover</a></li>
-          <li><a  mdbDropdownItem id="ranking_small_button" class="btn btn-secondary header-button">
+          <li><a  mdbDropdownItem id="ranking_small_button" class="btn btn-secondary header-button" routerLink="localhost/rankings">
             <img cImg ngSrc="/assets/images/heart.png" alt="ranking" class="small-icon" height="512" width="512">
             Rankings</a></li>
         </ul>
     </div>
 
-    <button id="mistops_small_button" type="button" class="btn btn-secondary header-button" >
+    <button id="mistops_small_button" type="button" class="btn btn-secondary header-button" routerLink="localhost/homepage">
       MisTops
     </button>
 
-    <button id="login_small_button" type="button" class="btn btn-secondary header-button">
+    <button id="login_small_button" type="button" class="btn btn-secondary header-button" routerLink="localhost/login">
       <img cImg ngSrc="/assets/images/username.png" alt="Login" class="small-icon" height="512" width="512">
     </button>
   </div>

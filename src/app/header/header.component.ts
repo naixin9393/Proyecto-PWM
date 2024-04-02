@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-header',
+  templateUrl: './header.component.html',
   standalone: true,
   imports: [
     NgOptimizedImage
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-
+export class HeaderComponent{
+ loadPrint(){
+   console.log("Funciona el botón");
+ }
 }
+

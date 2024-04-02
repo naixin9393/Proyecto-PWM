@@ -1,6 +1,6 @@
 <div class="container">
   <h1 id="summary-title" class="text text-primary display-3">{{ contentDetails.title }}</h1>
-  <div id="summary" class="row row-cols-1 row-cols-lg-2 justify-content-center gap-5">
+  <div class="row row-cols-1 row-cols-lg-2 justify-content-center gap-5">
     <div class="col-8 col-md-6 col-lg-5 col-xl-4">
       <div>
         <img class="img-fluid position-relative" alt="" ngSrc="{{ contentDetails.imageUrl }}" fill/>
@@ -11,7 +11,7 @@
             <i class="bi bi-star-fill" style="color: orange"></i>
           </span>
         </div>
-        <button class="btn btn-primary" ngClick="addToFavorites()">Add to my rankings</button>
+        <button class="btn btn-primary">Add to my rankings</button>
       </div>
     </div>
     <div class="col gy-3">
@@ -29,13 +29,11 @@
 
         </div>
         <div>
-          <h2 class="text text-secondary">Available at</h2>
+          <h2 class="text text-secondary">Available on</h2>
           <div class="d-flex gap-3">
-<!--
-            <a ngHref="{{ getPlatform() }}" target="_blank">
-              <img src="assets/images/netflix.png" alt="Netflix" style="width: 50px; height: 50px"/>
+            <a [href]="getPlatformUrl('Netflix')" target="_blank">
+              <img ngSrc="{{getPlatformIconClass('Netflix')}}" width="32" height="32" alt="">
             </a>
--->
         </div>
       </div>
     </div>
@@ -43,6 +41,6 @@
 </div>
 <div class="container">
   <h1 class="text text-primary display-3">Reviews</h1>
-  <div id="reviews-container" class="container gap-3"></div>
+  <div class="container gap-3"></div>
 </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ContentDetails } from "../contentdetails";
 import { NgOptimizedImage } from "@angular/common";
+import { PlatformService } from "../platform.service";
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,7 @@ import { NgOptimizedImage } from "@angular/common";
 })
 export class DetailComponent {
 
-  constructor() { }
+  constructor(private platformService: PlatformService) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,11 @@ export class DetailComponent {
     durationInMinutes: 24
   }
 
-  getPlatform() {
-    return "";
+  getPlatformUrl(platform: string): string {
+    return this.platformService.getPlatformUrl(platform);
+  }
+
+  getPlatformIconClass(platform: string): string {
+    return this.platformService.getPlatformIconUrl(platform);
   }
 }

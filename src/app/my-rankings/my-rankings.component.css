@@ -1,0 +1,27 @@
+.your_tops_category {
+  background-color: #F2E8E1;
+  text-align: center;
+  height: 10em;
+  margin: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.your_tops_category h1 {
+  margin: auto;
+}
+
+#Discover-Title {
+  margin-left:5%;
+  color: #b38867;
+  font-size:280%;
+  margin-bottom: 1%;
+
+}
+#Discover-Title::after {
+  display:block;
+  content: '';
+  background-color: #f2e8e1;
+  height: 1px;
+  width: 100%;
+}

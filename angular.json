@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MisTops": {
+    "daily-fit": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mis-tops",
+            "outputPath": "dist/daily-fit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,11 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/styles.css"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MisTops:build:production"
+              "buildTarget": "daily-fit:build:production"
             },
             "development": {
-              "buildTarget": "MisTops:build:development"
+              "buildTarget": "daily-fit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,7 +70,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "MisTops:build"
+            "buildTarget": "daily-fit:build"
           }
         },
         "test": {

@@ -2,7 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
-
+interface BookData{
+  title: string;
+  imgURL: string;
+}
 
 // @ts-ignore
 @Component({
@@ -17,14 +20,18 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 export class OpinionpageComponent implements OnInit{
   editingMode: boolean = false;
-  bookTitle: string ="Book Title";
-  titleText: string = 'Your review'
+  bookData: BookData = {
+    title: "Loading Title...",
+    imgURL: ""
+  }
+  titleText: string = 'Your review';
+
 
   constructor(private http: HttpClient){}
   ngOnInit(): void {
-    this.http.get<any>('/assets/data/book-data.json').subscribe(
+    this.http.get<BookData>('/assets/data/book-data.json').subscribe(
       (data) => {
-        this.bookTitle = data.title;
+        this.bookData = data;
       },
       (error) => {
         console.error('Error loading book data:', error);

@@ -1,23 +1,31 @@
 import { Component } from '@angular/core';
 import { ContentDetails } from "../contentdetails";
-import { NgOptimizedImage } from "@angular/common";
+import { NgForOf, NgOptimizedImage } from "@angular/common";
 import { PlatformService } from "../platform.service";
+import { ReviewComponent } from "./review/review.component";
+import { ReviewService } from "../review.service";
 
 @Component({
   selector: 'app-detail',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReviewComponent,
+    NgForOf
   ],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
 export class DetailComponent {
+  protected reviewIds: number[] | undefined;
 
-  constructor(private platformService: PlatformService) { }
+  constructor(private platformService: PlatformService, private reviewService: ReviewService) { }
 
   ngOnInit(): void {
+    this.reviewIds = this.reviewService.getReviewsMock(this.contentId);
   }
+
+  contentId: number = 1;
 
   contentDetails: ContentDetails = {
     title: 'One Piece',

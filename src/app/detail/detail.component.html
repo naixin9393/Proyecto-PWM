@@ -32,15 +32,17 @@
           <h2 class="text text-secondary">Available on</h2>
           <div class="d-flex gap-3">
             <a [href]="getPlatformUrl('Netflix')" target="_blank">
-              <img ngSrc="{{getPlatformIconClass('Netflix')}}" width="32" height="32" alt="">
+              <img ngSrc="{{ getPlatformIconClass('Netflix') }}" width="32" height="32" alt="">
             </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <h1 class="text text-primary display-3">Reviews</h1>
-  <div class="container gap-3"></div>
-</div>
+  <div class="container">
+    <h1 class="text text-primary display-3">Reviews</h1>
+    <div class="container gap-3" *ngFor="let reviewId of reviewIds">
+      <app-review [reviewId]="reviewId"></app-review>
+    </div>
+  </div>
 </div>

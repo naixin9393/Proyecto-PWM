@@ -17,13 +17,25 @@ h1::after {
   background-color: transparent;
   border: none;
 }
-#Button_Edit {
+
+#Star_Rating_Button{
   font-family:sans-serif;
   background-color: #626D71;
   border-color: transparent;
   color:white;
   border-radius: 8px;
   padding: 10px;
+}
+
+#Button_Edit {
+  font-family:sans-serif;
+  background-color: #626D71;
+  color:white;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  border: none;
 }
 #Opinion_Elements {
   display: flex;

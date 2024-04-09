@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ContentDetails } from "../contentdetails";
+import { ContentDetails } from "../../interfaces/contentdetails";
 import { NgForOf, NgOptimizedImage } from "@angular/common";
-import { PlatformService } from "../platform.service";
+import { PlatformService } from "../../services/platform.service";
 import { ReviewComponent } from "./review/review.component";
-import { ReviewService } from "../review.service";
+import { ReviewService } from "../../services/review.service";
 
 @Component({
   selector: 'app-detail',

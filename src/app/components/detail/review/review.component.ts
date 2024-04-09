@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ReviewService } from "../../review.service";
-import { Review } from "../../review";
+import { ReviewService } from "../../../services/review.service";
+import { Review } from "../../../interfaces/review";
 import { NgIf } from "@angular/common";
 
 @Component({

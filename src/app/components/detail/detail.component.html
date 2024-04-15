@@ -1,13 +1,13 @@
 <div class="container">
-  <h1 id="summary-title" class="text text-primary display-3">{{ contentDetails.title }}</h1>
+  <h1 id="summary-title" class="text text-primary display-3">{{ content?.title }}</h1>
   <div class="row row-cols-1 row-cols-lg-2 justify-content-center gap-5">
     <div class="col-8 col-md-6 col-lg-5 col-xl-4">
       <div>
-        <img class="img-fluid position-relative" alt="" ngSrc="{{ contentDetails.imageUrl }}" fill/>
+        <img class="img-fluid position-relative" alt="" ngSrc="{{ content?.imageUrl }}" fill/>
       </div>
       <div class="d-flex justify-content-evenly mt-2">
         <div class="d-flex align-items-center">
-          <span class="text">{{ contentDetails.rating }}
+          <span class="text">{{ content?.rating }}
             <i class="bi bi-star-fill" style="color: orange"></i>
           </span>
         </div>
@@ -18,15 +18,15 @@
       <div class="row gy-3">
         <div>
           <h2 class="text text-secondary">Synopsis</h2>
-          {{ contentDetails.synopsis }}
+          {{ content?.synopsis }}
         </div>
         <div>
           <h2 class="text text-secondary">Information</h2>
-          <p>Genres: {{ contentDetails.genres.join(', ') }}</p>
-          <p>Release date: {{ contentDetails.releaseDate.toDateString() }}</p>
-          <p>Score: {{ contentDetails.rating }}</p>
-          <p>Duration: {{ contentDetails.durationInMinutes }} minutes</p>
-
+          <p *ngIf="content">Genres: {{ content.genres.join(', ') }}</p>
+          <p *ngIf="content">Release date: {{ content.releaseDate.toDateString() }}</p>
+          <p>Episodes: {{ content?.episodes }}</p>
+          <p>Duration: {{ content?.durationInMinutes }} minutes</p>
+          <p>Score: {{ content?.rating }}</p>
         </div>
         <div>
           <h2 class="text text-secondary">Available on</h2>

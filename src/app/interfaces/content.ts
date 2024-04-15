@@ -1,4 +1,4 @@
-export interface ContentDetails {
+export interface Content {
   title: string;
   imageUrl: string;
   synopsis: string;

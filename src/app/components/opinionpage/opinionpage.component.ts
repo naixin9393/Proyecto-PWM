@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 interface BookData{
   title: string;
   imgURL: string;
+  starRating: number;
 }
 
 // @ts-ignore
@@ -14,7 +16,10 @@ interface BookData{
   templateUrl: "opinionpage.component.html",
   imports: [
     NgOptimizedImage,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgForOf,
+    NgIf
   ],
   styleUrl: 'opinionpage.component.css'
 })
@@ -22,12 +27,15 @@ export class OpinionpageComponent implements OnInit{
   editingMode: boolean = false;
   bookData: BookData = {
     title: "Loading Title...",
-    imgURL: ""
+    imgURL: "",
+    starRating: 0
   }
   titleText: string = 'Your review';
+  numberStar: number = 3;
 
+  constructor(private http: HttpClient){
 
-  constructor(private http: HttpClient){}
+  }
   ngOnInit(): void {
     this.http.get<BookData>('/assets/data/book-data.json').subscribe(
       (data) => {
@@ -43,5 +51,7 @@ export class OpinionpageComponent implements OnInit{
   toggleEditMode() {
     this.editingMode = !this.editingMode;
     this.titleText = this.editingMode ? 'Edit your review' : 'Your review';
+    this.bookData.starRating =this.numberStar;
   }
+
 }

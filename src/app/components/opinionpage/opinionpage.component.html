@@ -6,16 +6,21 @@
       <div class="Opinion_image col d-flex flex-column align-items-center" >
         <img [src]="bookData.imgURL" alt="book Image" id="Book Image" class="img-fluid" height="600" width="400">
       </div>
-      <div class="Review col-lg-6 d-flex flex-column align-items-center">
+      <div class="Review d-flex flex-column align-items-center">
         <p id='Book_Title'>
           {{ bookData.title }}
         </p>
         <textarea [readonly]="!editingMode" id="Opinion_Text_Area"></textarea>
-        <button (click)="toggleEditMode()" id="Button_Edit" class="edit-button">
-          {{ editingMode ? 'Save' : 'Edit' }}
-        </button>
+        <div class="row justify-content-between">
+          <button (click)="toggleEditMode()" id="Button_Edit" class="edit-button">
+            {{ editingMode ? 'Save' : 'Edit' }}
+          </button>
+          <select *ngIf="editingMode" [(ngModel)]="numberStar" id="Star_Rating_Button">
+            <option *ngFor="let num of [1, 2, 3, 4, 5]" [value]="num">{{ num }}  <i class="bi bi-star-fill"></i></option>
+          </select>
+          <div class="edit-button" *ngIf="!editingMode">{{ numberStar }}  <i class="bi bi-star-fill"></i></div>
+        </div>
       </div>
-
     </div>
   </div>
 </div>

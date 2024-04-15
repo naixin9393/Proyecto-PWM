@@ -25,7 +25,12 @@ export class TopRankingComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     this.topName = String(routeParams.get('topName'));
-    this.http.get<TopEntry[]>('../../assets/books.json')
+
+    function getTop(topName: string) {
+      return '../../assets/books.json';
+    }
+
+    this.http.get<TopEntry[]>(getTop(this.topName))
       .subscribe(
         (data: TopEntry[]) => {
           this.topEntries = data;

@@ -5,14 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width:100%;
 }
 
-.vertical-entry div {
-  display: flex;
-  justify-content: left;
-}
 .entry_descriptor{
   flex-direction: column;
+  text-align: center;
 }
 
 

@@ -5,6 +5,7 @@ import { PlatformService } from "../../services/platform.service";
 import { ReviewComponent } from "./review/review.component";
 import { ReviewService } from "../../services/review.service";
 import { ContentService } from "../../services/content.service";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,8 @@ import { ContentService } from "../../services/content.service";
     NgOptimizedImage,
     ReviewComponent,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'

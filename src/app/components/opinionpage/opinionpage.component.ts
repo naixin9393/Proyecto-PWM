@@ -5,7 +5,7 @@ import {FormsModule} from "@angular/forms";
 
 interface BookData{
   title: string;
-  imgURL: string;
+  imageURL: string;
   starRating: number;
 }
 
@@ -27,7 +27,7 @@ export class OpinionpageComponent implements OnInit{
   editingMode: boolean = false;
   bookData: BookData = {
     title: "Loading Title...",
-    imgURL: "",
+    imageURL: "Loading",
     starRating: 0
   }
   titleText: string = 'Your review';

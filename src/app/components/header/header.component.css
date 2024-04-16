@@ -33,6 +33,7 @@
 .header_buttons_small{
   display:none;
 }
+
 @media screen and (max-width:768px) {
   #Button_Mis_Tops {
     display: none;
@@ -50,8 +51,12 @@
     display: block;
   }
 
-  .dropdown-menu{
+  .dropdown-menu {
     display:none;
+    background: white;
+  }
+  .small-icon{
+    text-decoration: none;
   }
 
   .header_buttons_small #mistops_small_button {

@@ -8,7 +8,7 @@ import { ContentService } from "../../services/content.service";
 import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-detail',
+  selector: 'app-content',
   standalone: true,
   imports: [
     NgOptimizedImage,
@@ -17,10 +17,10 @@ import { RouterLink } from "@angular/router";
     NgIf,
     RouterLink
   ],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css'
+  templateUrl: './content.component.html',
+  styleUrl: './content.component.css'
 })
-export class DetailComponent {
+export class ContentComponent {
   protected reviewIds?: number[];
   protected content?: Content;
 

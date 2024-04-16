@@ -11,7 +11,7 @@
             <i class="bi bi-star-fill" style="color: orange"></i>
           </span>
         </div>
-        <button class="btn btn-primary" routerLink="add-content">Add to my rankings</button>
+        <button class="btn btn-primary" [routerLink]="['/add-content', contentId]">Add to my rankings</button>
       </div>
     </div>
     <div class="col gy-3">
@@ -27,6 +27,7 @@
           <p>Episodes: {{ content?.episodes }}</p>
           <p>Duration: {{ content?.durationInMinutes }} minutes</p>
           <p>Score: {{ content?.rating }}</p>
+          <p>Author: {{ content?.author }}</p>
         </div>
         <div>
           <h2 class="text text-secondary">Available on</h2>

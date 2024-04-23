@@ -27,7 +27,7 @@ export class TopRankingComponent implements OnInit {
     this.topName = String(routeParams.get('topName'));
 
     function getTop(topName: string) {
-      return '../../assets/books.json';
+      return 'assets/books.json';
     }
 
     this.http.get<TopEntry[]>(getTop(this.topName))

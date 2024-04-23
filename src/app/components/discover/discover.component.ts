@@ -15,7 +15,7 @@ export class DiscoverComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any>('../../assets/discover-category-data.json').subscribe(data => {
+    this.http.get<any>('assets/discover-category-data.json').subscribe(data => {
       this.discoverCategories = data.titles;
     });
   }

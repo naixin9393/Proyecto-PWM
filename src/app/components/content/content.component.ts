@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Content } from "../../interfaces/content";
 import { NgForOf, NgIf, NgOptimizedImage } from "@angular/common";
 import { PlatformService } from "../../services/platform.service";
 import { ReviewComponent } from "./review/review.component";
 import { ReviewService } from "../../services/review.service";
 import { ContentService } from "../../services/content.service";
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-content',
@@ -21,17 +21,25 @@ import { RouterLink } from "@angular/router";
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
+  @Input()
+  protected contentId: number = 0;
   protected reviewIds?: number[];
+
   protected content?: Content;
 
-  constructor(private platformService: PlatformService, private reviewService: ReviewService, private contentService: ContentService) { }
+  constructor(private platformService: PlatformService, private reviewService: ReviewService, private contentService: ContentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(
+      params => {
+        this.contentId = params['id'];
+      }
+    )
     this.reviewIds = this.reviewService.getReviewsMock(this.contentId);
-    this.content = this.contentService.getContentMock(this.contentId);
+    this.contentService.getContentById(this.contentId).then(
+      content => this.content = content
+    )
   }
-
-  contentId: number = 1;
 
   getPlatformUrl(platform: string): string {
     return this.platformService.getPlatformUrl(platform);

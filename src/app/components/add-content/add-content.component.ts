@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Content } from "../../interfaces/content";
 import { ContentService } from "../../services/content.service";
 import { NgOptimizedImage } from "@angular/common";
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-add-content',
@@ -16,12 +16,19 @@ import { RouterLink } from "@angular/router";
 })
 export class AddContentComponent {
   protected content?: Content;
-  protected contentId: number = 1;
+  protected contentId: number = 0;
 
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.content = this.contentService.getContentMock(this.contentId);
+    this.route.params.subscribe(
+        params => {
+          this.contentId = params['id'];
+        }
+    )
+    this.contentService.getContentById(this.contentId).then(
+        content => this.content = content
+    );
   }
 }

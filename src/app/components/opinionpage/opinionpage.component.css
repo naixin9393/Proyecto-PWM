@@ -1,83 +1,41 @@
 h1 {
-  margin-left:5%;
+  margin-left: 5%;
   color: #b38867;
-  font-size:280%;
+  font-size: 2.5em; /* Ajustar el tamaño del texto según sea necesario */
   margin-bottom: 1%;
 }
+
 h1::after {
-  display:block;
+  display: block;
   content: '';
   background-color: #f2e8e1;
   height: 1px;
   width: 100%;
 }
-.edit-button {
-  text-align: center;
-  margin-top: 20px;
-  background-color: transparent;
-  border: none;
-}
 
-#Star_Rating_Button{
-  font-family:sans-serif;
+.edit-button, #Star_Rating_Button, #Button_Edit, #start_rating_button {
+  font-family: sans-serif;
   background-color: #626D71;
-  border-color: transparent;
-  color:white;
+  color: white;
   border-radius: 8px;
-  padding: 10px;
-}
-
-#Button_Edit {
-  font-family:sans-serif;
-  background-color: #626D71;
-  color:white;
-  border-radius: 8px;
-  padding: 10px;
   text-align: center;
   margin-top: 20px;
   border: none;
+  padding: 0.7em;
+  cursor: pointer;
 }
-#Opinion_Elements {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 20px;
+
+.edit-button:hover, #Star_Rating_Button:hover, #Button_Edit:hover, #start_rating_button:hover {
+  background-color: #555;
+}
+
+#Opinion_Text_Area {
   width: 100%;
-  height: auto;
-
-}
-
-.Opinion_image{
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  margin-top: 20px;
-  padding: 20px;
-}
-
-#Book_Info {
-  align-items: center;
-  display: inline;
-}
-
-#Book_Image {
-  width: 75%;
-}
-
-#Book_Title {
-  color: #7A695D;
-  font-size: 130%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#Opinion_Text_Area{
-  width: 450px;
   height: 300px;
   background-color: #f2e8e1;
-  border-radius:8px;
-  border-color:transparent;
+  border-radius: 8px;
+  border-color: transparent;
+  margin-top: 20px;
 }
 
 

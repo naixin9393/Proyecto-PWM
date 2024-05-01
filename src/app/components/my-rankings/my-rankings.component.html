@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discover</title>
+</head>
+<body>
+<h1 id="Discover-Title">My Rankings</h1>
+<div class="your_tops_category_container container-fluid">
+  <div class="row justify-content-md-center" id="your-tops-buttons" >
+    <div class="col-12 col-md-6 col-lg-4 mb-2" *ngFor="let category of myRankingsCategories">
+      <section [routerLink]="['/tops', category]" class="your_tops_category">
+        <h1>{{category}}</h1>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -12,7 +12,13 @@ h1::after {
   height: 1px;
   width: 100%;
 }
+#profile-edit-info {
 
+  background-color: #F2E8E1;
+  padding: 20px;
+  border-radius: 10px;
+  height: auto;
+}
 #profile-info {
 
   background-color: #F2E8E1;

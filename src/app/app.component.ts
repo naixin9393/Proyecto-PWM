@@ -6,7 +6,15 @@ import {FooterComponent} from "./components/footer/footer.component";
 import {DiscoverComponent} from "./components/discover/discover.component";
 import {MyRankingsComponent} from "./components/my-rankings/my-rankings.component";
 import {TopRankingComponent} from "./components/top-ranking/top-ranking.component";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {environment} from "../environments/environment";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireModule} from "@angular/fire/compat";
 
+// Initialize Firebase
+const app = initializeApp(environment.firebase);
+const analytics = getAnalytics(app);
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,7 +24,10 @@ import {TopRankingComponent} from "./components/top-ranking/top-ranking.componen
             FooterComponent,
             DiscoverComponent,
             MyRankingsComponent,
-            TopRankingComponent],
+            TopRankingComponent,
+            AngularFireAuthModule,
+            AngularFireModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

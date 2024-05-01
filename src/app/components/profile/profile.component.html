@@ -11,7 +11,13 @@
       <img src="assets/images/profile.png" class="img-fluid mx-auto d-block" alt="Imagen de Perfil">
     </div>
 
-    <div class="col-lg-6 col-md-10 col-sm-10 col-10 align-self-center" id="profile-info">
+    <div class="col-lg-6 col-md-10 col-sm-10 col-10 align-self-center" id="profile-info" *ngIf="!editingMode">
+      <p>Name: Lorem ipsum</p>
+      <p>Email: loremipsum&#64;gmail.com</p>
+      <p>Country: Spain</p>
+      <p>Privacy: Private</p>
+    </div>
+    <div class="col-lg-6 col-md-10 col-sm-10 col-10 align-self-center" id="profile-edit-info" *ngIf="editingMode">
       <p>Name: Lorem ipsum</p>
       <p>Email: loremipsum&#64;gmail.com</p>
       <p>Country: Spain</p>
@@ -20,7 +26,7 @@
   </div>
   <div class="row justify-content-center mt-4">
     <div class="col-1">
-      <button class="edit-button">Edit</button>
+      <button class="edit-button" (click)="toggleEditMode()">Edit</button>
     </div>
   </div>
   <div class="row">

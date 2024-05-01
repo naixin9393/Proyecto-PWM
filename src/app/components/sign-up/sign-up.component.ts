@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {NgIf, NgOptimizedImage} from "@angular/common";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-sign-up',
@@ -26,7 +27,16 @@ export class SignUpComponent {
   protected password: string = "";
   protected confirmPassword: string = "";
 
-  constructor() {
+  constructor(public auth: AngularFireAuth) { }
+
+  signIn(email:string, password:string) {
+    this.auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Autenticación exitosa, puedes acceder a userCredential.user
+      })
+      .catch((error) => {
+        // Manejo de errores de autenticación
+      });
   }
 
   satisfyRequirements() {

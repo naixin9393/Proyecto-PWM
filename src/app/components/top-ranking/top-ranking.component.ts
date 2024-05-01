@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule, NgForOf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
+import {BookService} from "../../services/book.service";
+import {TopEntry} from "../../interfaces/top-entry";
 
 @Component({
   selector: 'app-top-ranking',
@@ -19,7 +21,8 @@ export class TopRankingComponent implements OnInit {
   topName: string = "TopNotFound";
 
   constructor(private http: HttpClient,
-  private route: ActivatedRoute) {
+  private route: ActivatedRoute,
+  private bookservice: BookService) {
   }
 
   ngOnInit(): void {
@@ -30,7 +33,7 @@ export class TopRankingComponent implements OnInit {
       return 'assets/books.json';
     }
 
-    this.http.get<TopEntry[]>(getTop(this.topName))
+    this.bookservice.getBooks()
       .subscribe(
         (data: TopEntry[]) => {
           this.topEntries = data;
@@ -39,11 +42,15 @@ export class TopRankingComponent implements OnInit {
           console.error('Error al cargar los datos:', error);
         }
       );  }
+    //this.http.get<TopEntry[]>(getTop(this.topName))
+    //  .subscribe(
+    //    (data: TopEntry[]) => {
+    //      this.topEntries = data;
+    //    },
+    //    (error) => {
+    //      console.error('Error al cargar los datos:', error);
+    //    }
+    //  );  }
 }
 
-export interface TopEntry {
-  name: string;
-  author: string;
-  value: number;
-}
 

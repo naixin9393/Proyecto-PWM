@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Series 1",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 2",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 3",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 4",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 5",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 6",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 7",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 8",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 9",
+    "image": "/images/sample.jpg"
+  },
+  {
+    "name": "Series 10",
+    "image": "/images/sample.jpg"
+  }
+]

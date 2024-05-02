@@ -1,0 +1,23 @@
+<div *ngIf="movies">
+  <h2>Top Movies</h2>
+  <div *ngFor="let movie of movies">
+    <img ngSrc="movie.image" alt="{{ movie.name }}">
+    <p>{{ movie.name }}</p>
+  </div>
+</div>
+
+<div *ngIf="series">
+  <h2>Top Series</h2>
+  <div *ngFor="let serie of series">
+    <img ngSrc="serie.image" alt="{{ serie.name }}">
+    <p>{{ serie.name }}</p>
+  </div>
+</div>
+
+<div *ngIf="books">
+  <h2>Top Books</h2>
+  <div *ngFor="let book of books">
+    <img ngSrc="book.image" alt="{{ book.name }}">
+    <p>{{ book.name }}</p>
+  </div>
+</div>

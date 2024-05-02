@@ -4,6 +4,7 @@ import { collection, collectionData, doc, Firestore, getDoc } from "@angular/fir
 import { Observable } from "rxjs";
 import { Review } from "../interfaces/review";
 import { ContentService } from "./content.service";
+import { User } from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,10 @@ import { ContentService } from "./content.service";
 export class MovieService implements ContentService {
 
   constructor(private firestore: Firestore) { }
+
+  addReview(user: User, content: Content, rating: number, reviewText: string): void {
+        throw new Error('Method not implemented.');
+    }
 
   getContents(): Observable<Content[]> {
     const contentsRef = collection(this.firestore, 'movies');

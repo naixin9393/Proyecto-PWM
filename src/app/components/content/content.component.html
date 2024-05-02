@@ -49,6 +49,6 @@
 </div>
 <div id="popup-background" class="d-flex justify-content-center" *ngIf="isAddContentOpen">
   <div id="popup-add-content">
-    <app-add-content [content]="content" (closeEvent)="toggleAddContent()"></app-add-content>
+    <app-add-content [contentService]="contentService" [content]="content" (closeEvent)="toggleAddContent()"></app-add-content>
   </div>
 </div>

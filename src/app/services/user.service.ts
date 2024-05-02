@@ -15,7 +15,9 @@ export class UserService {
     if (fireStoreUser) {
       let documentReference = doc(this.firestore, 'users', fireStoreUser.uid);
       let documentSnapshot = await getDoc(documentReference);
-      return documentSnapshot.data() as User;
+      let user = documentSnapshot.data() as User;
+      user.id = documentSnapshot.id;
+      return user;
     } else {
       return null;
     }

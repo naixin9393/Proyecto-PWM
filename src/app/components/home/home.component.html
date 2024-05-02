@@ -5,5 +5,31 @@
   <button id="home-welcome-button" routerLink="/login">Get started</button>
 </section>
 <section id="tops-section">
-  <div id="best-rated-text-container"></div>
+  <div>
+    <h2>Top Series</h2>
+    <carousel>
+      <slide *ngFor="let serie of topSeries">
+        <p>{{ serie.title }}</p>
+        <img src="{{serie.imageUrl}}" alt="{{ serie.title }}">
+      </slide>
+    </carousel>
+  </div>
+  <div>
+    <h2>Top Books</h2>
+    <carousel>
+      <slide *ngFor="let book of topBooks">
+        <p>{{ book.title }}</p>
+        <img src="assets/images/sample.jpg" alt="{{ book.title }}" >
+      </slide>
+    </carousel>
+  </div>
+  <div>
+    <h2>Top Movies</h2>
+    <carousel>
+      <slide *ngFor="let movie of topMovies">
+        <p>{{ movie.title }}</p>
+        <img src="{{movie.imageUrl}}" alt="{{ movie.title }}">
+      </slide>
+    </carousel>
+  </div>
 </section>

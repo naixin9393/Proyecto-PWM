@@ -2,40 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-  padding-left: 10em;
-  padding-right: 10em;
+  padding: 0 10em; /* Ajuste del padding */
 }
 
-#best-rated-text-container {
-  display: flex;
-  justify-content: center;
-}
-
-#best-rated-text {
-  font-family: inter, sans-serif;
-  font-size: 2em;
-  font-weight: bold;
-  color: #b38867;
-}
-
-#best-rated-text::after {
-  display:block;
-  content: '';
-  background-color: #f2e8e1;
-  height: 1px;
-  width: 100%;
-}
 #home-welcome-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1em;
-  padding: 10em;
+  padding: 5em; /* Reducción del padding */
 }
 
 #home-welcome-text {
   font-size: 3rem;
+  text-align: center; /* Alineación del texto centrada */
 }
 
 #home-welcome-button {
@@ -44,4 +25,68 @@
   background-color: #1F506B;
   color: white;
   border-radius: 0.5em;
+}
+
+#tops-section h2 {
+  font-size: 1.5em;
+  color: #b38867;
+  margin-bottom: 1em;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+  padding: 1em 0; /* Ajuste del padding */
+  width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
+  scroll-snap-type: x mandatory; /* Permite que los elementos del carrusel se desplacen horizontalmente de forma suave */
+}
+
+.carousel::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #818181;
+  border: 7px solid #cdcdc0;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #f2e8e1;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background-color: #AAAAAA;
+}
+
+.carousel::-webkit-scrollbar-thumb:active {
+  background-color: #888888;
+}
+
+.slide {
+  flex: 0 0 calc(33.33% - 1em);
+  min-width: 15em;
+  scroll-snap-align: start; /* Alinea cada elemento del carrusel al inicio */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f2e8e1;
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slide p {
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  padding: 0.5em;
 }

@@ -11,7 +11,6 @@ import { MovieService } from "./services/movie.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
-    importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"mistops-c0bce","appId":"1:794098111547:web:2a3973a72bd716364e781e","storageBucket":"mistops-c0bce.appspot.com","apiKey":"AIzaSyADtDo9LnPcWDsHYm-kDbGm0R_q4Nc70Tc","authDomain":"mistops-c0bce.firebaseapp.com","messagingSenderId":"794098111547","measurementId":"G-5MEF921126"}))),
     importProvidersFrom(provideFirestore(() => getFirestore())),
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebase)),

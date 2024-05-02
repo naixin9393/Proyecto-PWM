@@ -18,10 +18,11 @@ export class SeriesService implements ContentService {
   }
 
   async getContentById(documentId: string): Promise<Content> {
-    console.log(documentId)
     const contentRef = doc(this.firestore, 'series', documentId);
     let documentSnapshot = await getDoc(contentRef);
-    return documentSnapshot.data() as Content;
+    const content = documentSnapshot.data() as Content;
+    content.id = documentSnapshot.id;
+    return content;
   }
 
   getReviewsById(documentId: string): Observable<Review[]> {

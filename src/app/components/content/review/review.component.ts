@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ReviewService } from "../../../services/review.service";
 import { Review } from "../../../interfaces/review";
 import { NgIf } from "@angular/common";
 
@@ -14,12 +13,5 @@ import { NgIf } from "@angular/common";
 })
 export class ReviewComponent {
   @Input()
-  reviewId: number = 0;
   review: Review | null = null;
-  constructor(private reviewService: ReviewService) {
-  }
-
-  ngOnInit(): void{
-    this.review = this.reviewService.getReviewMock(this.reviewId)
-  }
 }

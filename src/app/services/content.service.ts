@@ -1,16 +1,9 @@
-import { Injectable } from '@angular/core';
 import { Content } from "../interfaces/content";
+import { Observable } from "rxjs";
+import { Review } from "../interfaces/review";
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ContentService {
-
-  constructor() {
-  }
-
-  async getContentById(id: number): Promise<Content> {
-    const content = await fetch(`http://localhost:3000/content/${id}`)
-    return content.json();
-  }
+export abstract class ContentService {
+  abstract getContentById(documentId: string): Promise<Content>;
+  abstract getContents(): Observable<Content[]>;
+  abstract getReviewsById(documentId: string): Observable<Review[]>;
 }

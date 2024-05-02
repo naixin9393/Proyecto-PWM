@@ -33,7 +33,7 @@
         </div>
         <div class="button-container d-flex justify-content-center gap-3">
           <button class="btn btn-primary" type="button">Add to your ranking</button>
-          <button class="btn btn-secondary" type="button" [routerLink]="['/content', contentId]">Cancel</button>
+          <button class="btn btn-secondary" type="button" (click)="onClose()">Cancel</button>
         </div>
       </div>
     </div>

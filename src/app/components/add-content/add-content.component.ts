@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Content } from "../../interfaces/content";
-import { ContentService } from "../../services/content.service";
 import { NgOptimizedImage } from "@angular/common";
-import { ActivatedRoute, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
+import { ContentService } from "../../services/content.service";
 
 @Component({
   selector: 'app-add-content',
@@ -15,20 +15,17 @@ import { ActivatedRoute, RouterLink } from "@angular/router";
   styleUrl: './add-content.component.css'
 })
 export class AddContentComponent {
-  protected content?: Content;
-  protected contentId: number = 0;
+  @Input()
+  content?: Content;
+  @Input()
+  contentService: ContentService | undefined;
+  @Output()
+  closeEvent = new EventEmitter<void>();
 
-  constructor(private contentService: ContentService, private route: ActivatedRoute) {
+  constructor() {
   }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(
-        params => {
-          this.contentId = params['id'];
-        }
-    )
-    this.contentService.getContentById(this.contentId).then(
-        content => this.content = content
-    );
+  onClose() {
+    this.closeEvent.emit();
   }
 }

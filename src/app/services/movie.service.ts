@@ -14,11 +14,10 @@ export class MovieService implements ContentService {
 
   getContents(): Observable<Content[]> {
     const contentsRef = collection(this.firestore, 'movies');
-    return collectionData(contentsRef, {idField: 'id'}) as Observable<Content[]>;
+    return collectionData(contentsRef, {idField: 'idField'}) as Observable<Content[]>;
   }
 
   async getContentById(documentId: string): Promise<Content> {
-    console.log("moview")
     const contentRef = doc(this.firestore, 'movies', documentId);
     let documentSnapshot = await getDoc(contentRef);
     return documentSnapshot.data() as Content;

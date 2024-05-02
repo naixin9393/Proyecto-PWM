@@ -8,6 +8,7 @@ import {SignUpComponent} from "./components/sign-up/sign-up.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import { ContentComponent } from "./components/content/content.component";
 import { InjectionToken } from "@angular/core";
+import {HomeComponent} from "./components/home/home.component";
 
 export const SERIES_SERVICE = new InjectionToken<string>('SeriesService');
 export const MOVIE_SERVICE = new InjectionToken<string>('MovieService');
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'series/:id', component: ContentComponent, data: { requiredService: SERIES_SERVICE }},
   { path: 'movie/:id', component: ContentComponent, data: { requiredService: MOVIE_SERVICE }},
   { path: 'opinion', component: OpinionpageComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent},
   { path: 'my-rankings', component: MyRankingsComponent},
   { path: 'tops/:topName', component: TopRankingComponent},

@@ -42,13 +42,13 @@
   </div>
   <div class="container">
     <h1 class="text text-primary display-3">Reviews</h1>
-    <div class="container gap-3" *ngFor="let review of reviews">
-      <app-review [review]="review"></app-review>
+    <div class="container gap-3" *ngFor="let reviewId of content?.reviews">
+      <app-review [id]="reviewId"></app-review>
     </div>
   </div>
 </div>
 <div id="popup-background" class="d-flex justify-content-center" *ngIf="isAddContentOpen">
   <div id="popup-add-content">
-    <app-add-content [content]="content" (closeEvent)="toggleAddContent()"></app-add-content>
+    <app-add-content [contentService]="contentService" [content]="content" (closeEvent)="toggleAddContent()"></app-add-content>
   </div>
 </div>

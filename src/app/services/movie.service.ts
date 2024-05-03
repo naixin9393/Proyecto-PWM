@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Content } from "../interfaces/content";
-import { collection, collectionData, doc, Firestore, getDoc } from "@angular/fire/firestore";
+import { collection, collectionData, doc, docData, Firestore, getDoc } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { Review } from "../interfaces/review";
 import { ContentService } from "./content.service";
+import { User } from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +13,18 @@ export class MovieService implements ContentService {
 
   constructor(private firestore: Firestore) { }
 
+  addReview(user: User, content: Content, rating: number, reviewText: string): void {
+        throw new Error('Method not implemented.');
+    }
+
   getContents(): Observable<Content[]> {
     const contentsRef = collection(this.firestore, 'movies');
-    return collectionData(contentsRef, {idField: 'id'}) as Observable<Content[]>;
+    return collectionData(contentsRef, {idField: 'idField'}) as Observable<Content[]>;
   }
-  async getContentById(documentId: string): Promise<Content> {
+
+  getContentById(documentId: string): Observable<Content> {
     const contentRef = doc(this.firestore, 'movies', documentId);
-    let documentSnapshot = await getDoc(contentRef);
-    const content = documentSnapshot.data() as Content;
-    content.id = documentSnapshot.id;
-    return content;
+    return docData(contentRef) as Observable<Content>;
 
   }
 

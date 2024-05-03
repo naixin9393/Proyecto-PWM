@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import { doc, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import { doc, docData, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class UserService {
     if (fireStoreUser) {
       let documentReference = doc(this.firestore, 'users', fireStoreUser.uid);
       let documentSnapshot = await getDoc(documentReference);
-      return documentSnapshot.data() as User;
+      let user = documentSnapshot.data() as User;
+      user.id = documentSnapshot.id;
+      return user;
     } else {
       return null;
     }
@@ -41,5 +44,10 @@ export class UserService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  getUserById(userId: string): Observable<User> {
+    let documentReference = doc(this.firestore, 'users', userId);
+    return docData(documentReference) as Observable<User>;
   }
 }

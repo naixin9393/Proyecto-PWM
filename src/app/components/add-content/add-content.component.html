@@ -1,5 +1,5 @@
 <div id="add-content-page" class="container p-2">
-  <h1 class="add-content-title text text-primary display-3">Add content</h1>
+  <h1 class="add-content-title text text-primary display-3">Add to ranking</h1>
   <div class="add-content-container row row-cols-1 row-cols-md-2 justify-content-center align-items-center gap-5">
     <div class="col col-md-4">
       <div>
@@ -18,22 +18,18 @@
           </div>
           <div>
             <label for="add-content-review-textarea">Review:</label>
-            <textarea id="add-content-review-textarea" placeholder="Write a review" rows="5" class="form-control"></textarea>
+            <textarea id="add-content-review-textarea" placeholder="Write a review" rows="5" class="form-control" [(ngModel)]="reviewText"></textarea>
           </div>
           <div>
             <label for="add-content-score-select">Score:</label>
-            <select id="add-content-score-select" class="form-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+            <select id="add-content-score-select" class="form-select" [(ngModel)]="rating">
+              <option [value]="rating" *ngFor="let rating of ratings">{{rating}}</option>
             </select>
           </div>
         </div>
         <div class="button-container d-flex justify-content-center gap-3">
-          <button class="btn btn-primary" type="button">Add to your ranking</button>
-          <button class="btn btn-secondary" type="button" (click)="onClose()">Cancel</button>
+          <button class="btn btn-primary" type="button" (click)="submit()">Add to your ranking</button>
+          <button class="btn btn-secondary" type="button" (click)="close()">Cancel</button>
         </div>
       </div>
     </div>

@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import {TopEntry} from "../interfaces/top-entry";
-import {
-  Firestore, addDoc, collection, collectionData,
-  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, getDoc
-} from '@angular/fire/firestore';
+import {Firestore, addDoc, collection, collectionData, doc, getDoc } from '@angular/fire/firestore';
 import {Observable} from "rxjs";
 import {Content} from "../interfaces/content";
 import {ContentService} from "./content.service";
@@ -22,7 +19,7 @@ export class BookService implements ContentService{
 
   getBooks(): Observable<TopEntry[]> {
     const booksRef = collection(this.firestore, 'books');
-    return collectionData(booksRef, { idField: 'name' }) as Observable<TopEntry[]>;
+    return collectionData(booksRef, { idField: 'id' }) as Observable<TopEntry[]>;
   }
 
   getContents(): Observable<Content[]> {
@@ -33,7 +30,9 @@ export class BookService implements ContentService{
   async getContentById(documentId: string): Promise<Content> {
     const contentRef = doc(this.firestore, 'books', documentId);
     let documentSnapshot = await getDoc(contentRef);
-    return documentSnapshot.data() as Content;
+    const content = documentSnapshot.data() as Content;
+    content.id = documentSnapshot.id;
+    return content;
   }
 
   getReviewsById(documentId: string): Observable<Review[]> {

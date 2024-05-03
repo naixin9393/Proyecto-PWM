@@ -12,7 +12,7 @@ import {HomeComponent} from "./components/home/home.component";
 
 export const SERIES_SERVICE = new InjectionToken<string>('SeriesService');
 export const MOVIE_SERVICE = new InjectionToken<string>('MovieService');
-export const BOOK_SERVICE: InjectionToken<string> = new InjectionToken<string>('BookService');
+export const BOOK_SERVICE: InjectionToken<string> = new InjectionToken<string>('BookService')
 
 export const routes: Routes = [
   { path: '', component: ContentComponent },

@@ -1,13 +1,14 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { MOVIE_SERVICE, routes, SERIES_SERVICE } from './app.routes';
+import {BOOK_SERVICE, MOVIE_SERVICE, routes, SERIES_SERVICE} from './app.routes';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import {environment} from "../environments/environment";
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { SeriesService } from "./services/series.service";
 import { MovieService } from "./services/movie.service";
+import {BookService} from "./services/book.service";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
@@ -24,6 +25,9 @@ export const appConfig: ApplicationConfig = {
     {
       provide: MOVIE_SERVICE,
       useClass: MovieService
+    },
+    { provide: BOOK_SERVICE,
+      useClass: BookService
     }
   ]
 };

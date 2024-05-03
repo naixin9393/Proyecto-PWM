@@ -6,6 +6,7 @@ import { ContentService } from "../../services/content.service";
 import { FormsModule } from "@angular/forms";
 import { UserService } from "../../services/user.service";
 import { User } from "../../interfaces/user";
+import { ReviewService } from "../../services/review.service";
 
 @Component({
   selector: 'app-add-content',
@@ -34,10 +35,22 @@ export class AddContentComponent {
   ngOnInit() {
     this.userService.getCurrentUser().then(user => {
       this.user = user;
+      this.loadExistingReview();
     });
   }
 
-  constructor(private userService: UserService) {
+  loadExistingReview() {
+    if (this.content && this.user) {
+      this.reviewService.queryReviewByContentAndUser(this.content?.id, this.user?.id).then(querySnapshot => {
+        querySnapshot.forEach((doc) => {
+          this.rating = doc.data()['rating'];
+          this.reviewText = doc.data()['review'];
+        });
+      })
+    }
+  }
+
+  constructor(private userService: UserService, private reviewService: ReviewService) {
   }
 
   close() {

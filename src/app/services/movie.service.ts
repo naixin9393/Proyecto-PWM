@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Content } from "../interfaces/content";
-import { collection, collectionData, doc, Firestore, getDoc } from "@angular/fire/firestore";
+import { collection, collectionData, doc, docData, Firestore, getDoc } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { Review } from "../interfaces/review";
 import { ContentService } from "./content.service";
@@ -22,10 +22,10 @@ export class MovieService implements ContentService {
     return collectionData(contentsRef, {idField: 'idField'}) as Observable<Content[]>;
   }
 
-  async getContentById(documentId: string): Promise<Content> {
+  getContentById(documentId: string): Observable<Content> {
     const contentRef = doc(this.firestore, 'movies', documentId);
-    let documentSnapshot = await getDoc(contentRef);
-    return documentSnapshot.data() as Content;
+    return docData(contentRef) as Observable<Content>;
+
   }
 
   getReviewsById(documentId: string): Observable<Review[]> {

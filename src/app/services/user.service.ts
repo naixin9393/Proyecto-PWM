@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import { doc, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import { doc, docData, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,10 @@ export class UserService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  getUserById(userId: string): Observable<User> {
+    let documentReference = doc(this.firestore, 'users', userId);
+    return docData(documentReference) as Observable<User>;
   }
 }

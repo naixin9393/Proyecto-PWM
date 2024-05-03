@@ -11,4 +11,5 @@ export interface Content {
   chapters?: number;
   episodes?: number;
   availableOn: string[];
+  reviews: string[];
 }

@@ -1,0 +1,87 @@
+#tops-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 0 10em; /* Ajuste del padding */
+}
+
+#home-welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 5em; /* Reducción del padding */
+}
+
+#home-welcome-text {
+  font-size: 3rem;
+  text-align: center; /* Alineación del texto centrada */
+}
+
+#home-welcome-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #1F506B;
+  color: white;
+  border-radius: 0.5em;
+}
+#tops-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding: 0 5%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2em;
+  padding: 1em 0;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  flex: 0 0 calc(30% - 1em);
+  min-width: 12em;
+  height: auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f2e8e1;
+  border-radius: 1em;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.slide img {
+  width: 80%;
+  height: auto;
+}
+
+.slide h3 {
+  font-size: 1.8em;
+  color: #b38867;
+  margin-bottom: 0.5em;
+}
+
+.slide p {
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.slide button {
+  font-size: 1.2em;
+  padding: 0.5em 1.5em;
+  background-color: #1F506B;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+}

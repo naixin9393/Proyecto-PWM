@@ -1,0 +1,41 @@
+<section id="home-welcome-section">
+  <div>
+    <p id="home-welcome-text" class="text text-primary text-center display-2">Rank and share with your friends !</p>
+  </div>
+  <button id="home-welcome-button" routerLink="/login">Get started</button>
+</section>
+<section id="tops-section">
+  <div class="container">
+    <h2>Top Series</h2>
+    <div class="carousel">
+      <div *ngFor="let serie of topSeries" class="slide">
+        <h3>{{ serie.title }}</h3>
+        <img [src]="serie.imageUrl" [alt]="serie.title">
+        <p class="rating">Rating: {{ serie.rating }}</p>
+        <button class="btn btn-primary" routerLink="/series/zcAJJATgGREqgaaMaSlW">Go to Review</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Top Books</h2>
+    <div class="carousel">
+      <div *ngFor="let book of topBooks" class="slide">
+        <h3>{{ book.title }}</h3>
+        <img [src]="book.imageUrl" [alt]="book.title">
+        <p class="rating">Rating: {{ book.rating }}</p>
+        <button class="btn btn-primary">Go to Review</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Top Movies</h2>
+    <div class="carousel">
+      <div *ngFor="let movie of topMovies" class="slide">
+        <h3>{{ movie.title }}</h3>
+        <img [src]="movie.imageUrl" [alt]="movie.title">
+        <p class="rating">Rating: {{ movie.rating }}</p>
+        <button class="btn btn-primary">Go to Review</button>
+      </div>
+    </div>
+  </div>
+</section>

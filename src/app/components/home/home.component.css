@@ -1,8 +1,8 @@
 #tops-section {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  padding: 0 10em; /* Ajuste del padding */
+  gap: 4em;
+  padding: 0 5%;
 }
 
 #home-welcome-section {
@@ -11,12 +11,12 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-  padding: 5em; /* Reducción del padding */
+  padding: 5em;
 }
 
 #home-welcome-text {
   font-size: 3rem;
-  text-align: center; /* Alineación del texto centrada */
+  text-align: center;
 }
 
 #home-welcome-button {
@@ -25,12 +25,6 @@
   background-color: #1F506B;
   color: white;
   border-radius: 0.5em;
-}
-#tops-section {
-  display: flex;
-  flex-direction: column;
-  gap: 4em;
-  padding: 0 5%;
 }
 
 .container {
@@ -48,7 +42,6 @@
 .slide {
   flex: 0 0 calc(30% - 1em);
   min-width: 12em;
-  height: auto;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -56,25 +49,29 @@
   background: #f2e8e1;
   border-radius: 1em;
   overflow: hidden;
-  padding: 15px;
+  padding: 1em;
 }
 
 .slide img {
-  width: 80%;
-  height: auto;
+  width:259px;
+  height: 384px;
 }
 
 .slide h3 {
   font-size: 1.8em;
   color: #b38867;
   margin-bottom: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .slide p {
   font-size: 1.2em;
   color: black;
   text-align: center;
-  margin-bottom: 1em;
+  margin-top: auto;
+  padding: 5px;
 }
 
 .slide button {
@@ -84,4 +81,21 @@
   color: white;
   border: none;
   border-radius: 0.5em;
+}
+.carousel::-webkit-scrollbar {
+  width: 12px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

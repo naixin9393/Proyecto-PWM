@@ -8,18 +8,18 @@
   <div class="container">
     <h2>Top Series</h2>
     <div class="carousel">
-      <div *ngFor="let serie of topSeries" class="slide">
+      <div *ngFor="let serie of topSeries.slice(0, 10)" class="slide">
         <h3>{{ serie.title }}</h3>
         <img [src]="serie.imageUrl" [alt]="serie.title">
         <p class="rating">Rating: {{ serie.rating }}</p>
-        <button class="btn btn-primary" routerLink="/series/zcAJJATgGREqgaaMaSlW">Go to Review</button>
+        <button class="btn btn-primary" routerLink="/series/{{serie.id}}">Go to Review</button>
       </div>
     </div>
   </div>
   <div class="container">
     <h2>Top Books</h2>
     <div class="carousel">
-      <div *ngFor="let book of topBooks" class="slide">
+      <div *ngFor="let book of topBooks.slice(0, 10)" class="slide">
         <h3>{{ book.title }}</h3>
         <img [src]="book.imageUrl" [alt]="book.title">
         <p class="rating">Rating: {{ book.rating }}</p>
@@ -30,11 +30,11 @@
   <div class="container">
     <h2>Top Movies</h2>
     <div class="carousel">
-      <div *ngFor="let movie of topMovies" class="slide">
+      <div *ngFor="let movie of topMovies.slice(0, 10)" class="slide">
         <h3>{{ movie.title }}</h3>
         <img [src]="movie.imageUrl" [alt]="movie.title">
         <p class="rating">Rating: {{ movie.rating }}</p>
-        <button class="btn btn-primary">Go to Review</button>
+        <button class="btn btn-primary" routerLink="/movie/{{movie.id}}">Go to Review</button>
       </div>
     </div>
   </div>

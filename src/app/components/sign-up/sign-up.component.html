@@ -2,7 +2,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <div class="container mb-3">
   <div class="row align-items-center">
-    <form id="form" class="form container">
+    <form id="form" class="form container" (ngSubmit)="onSubmit()">
       <div class="row justify-content-center mb-1">
         <p class="form-title text-primary display-1 text-center">Sign Up</p>
       </div>
@@ -11,10 +11,18 @@
           <div class="col col-lg-8 mb-4">
             <div class="input row justify-content-end align-items-center mb-1">
               <div class="col-md-1 d-md-block d-none">
+                <img src="assets/icons/mail.svg" alt="" width="44" height="44">
+              </div>
+              <div class="col col-lg-6">
+                <input class="form-control" placeholder="Email" name="email" [(ngModel)]="email" required>
+              </div>
+            </div>
+            <div class="input row justify-content-end align-items-center mb-1">
+              <div class="col-md-1 d-md-block d-none">
                 <img class="img-fluid text-field-icon" alt="" src="assets/images/username.png" height="512" width="512"/>
               </div>
               <div class="col col-lg-6">
-                <input class="form-control" value="" placeholder="Username" required>
+                <input class="form-control" placeholder="Username" name="username" [(ngModel)]="username" required>
               </div>
             </div>
             <div class="input row justify-content-end align-items-center mb-1">

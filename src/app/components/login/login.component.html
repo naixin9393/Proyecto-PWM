@@ -5,7 +5,7 @@
         <img class="w-100" alt="" src="assets/images/sample.jpg"/>
       </figure>
     </div>
-    <form class="form col col-xl-4">
+    <form class="form col col-xl-4" (ngSubmit)="onSubmit()">
       <div class="row justify-content-center mb-1">
         <p class="form-title text-primary display-1 text-center">Login</p>
       </div>
@@ -15,7 +15,7 @@
             <img class="img-fluid text-field-icon" alt="" src="assets/images/username.png"/>
           </div>
           <div class="col col-lg-7">
-            <input class="form-control" required value="" placeholder="Username">
+            <input class="form-control" required value="" placeholder="Email" name="email" [(ngModel)]="email">
           </div>
         </div>
         <div class="input row justify-content-center align-items-center mb-1">
@@ -23,7 +23,7 @@
             <img class="img-fluid text-field-icon" alt="" src="assets/images/password.png"/>
           </div>
           <div class="col col-lg-7">
-            <input class="form-control" type="password" value="" required placeholder="Password">
+            <input class="form-control" type="password" required placeholder="Password" name="password" [(ngModel)]="password">
           </div>
         </div>
       </div>

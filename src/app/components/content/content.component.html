@@ -22,7 +22,7 @@
         </div>
         <div>
           <h2 class="text text-secondary">Information</h2>
-          <p>Genres: {{ content.genres.join(', ') }}</p>
+          <p *ngIf="content.genres">Genres: {{ content.genres.join(', ') }}</p>
           <p>Release date: {{ content.releaseDate }}</p>
           <p *ngIf="content.episodes">Episodes: {{ content.episodes }}</p>
           <p *ngIf="content.durationInMinutes">Duration: {{ content.durationInMinutes }} minutes</p>

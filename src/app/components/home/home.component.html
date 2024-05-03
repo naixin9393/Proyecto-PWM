@@ -38,4 +38,15 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <h2>Top Songs</h2>
+    <div class="carousel">
+      <div *ngFor="let song of topSongs.slice(0, 10)" class="slide">
+        <h3>{{ song.title }}</h3>
+        <img [src]="song.imageUrl" [alt]="song.title">
+        <p class="rating">Rating: {{ song.rating }}</p>
+        <button class="btn btn-primary" routerLink="/song/{{song.id}}">Go to Review</button>
+      </div>
+    </div>
+  </div>
 </section>

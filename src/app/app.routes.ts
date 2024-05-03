@@ -12,13 +12,16 @@ import {HomeComponent} from "./components/home/home.component";
 
 export const SERIES_SERVICE = new InjectionToken<string>('SeriesService');
 export const MOVIE_SERVICE = new InjectionToken<string>('MovieService');
-export const BOOK_SERVICE: InjectionToken<string> = new InjectionToken<string>('BookService')
+export const BOOK_SERVICE: InjectionToken<string> = new InjectionToken<string>('BookService');
+export const SONG_SERVICE: InjectionToken<string> = new InjectionToken<string>('SongService');
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'series/:id', component: ContentComponent, data: { requiredService: SERIES_SERVICE }},
   { path: 'movie/:id', component: ContentComponent, data: { requiredService: MOVIE_SERVICE }},
   { path: 'book/:id', component: ContentComponent, data: { requiredService: BOOK_SERVICE }},
+  { path: 'song/:id', component: ContentComponent, data: { requiredService: SONG_SERVICE }},
   { path: 'opinion', component: OpinionpageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent},

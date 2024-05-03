@@ -6,6 +6,7 @@ import {MovieService} from "../../services/movie.service";
 import {BookService} from "../../services/book.service";
 import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {CarouselModule} from "ngx-bootstrap/carousel";
+import {SongService} from "../../services/song.service";
 
 
 @Component({
@@ -25,13 +26,16 @@ export class HomeComponent implements OnInit{
   topSeries: Content[] = [];
   topBooks: Content[] = [];
   topMovies: Content[] = [];
+  topSongs: Content [] = [];
 
-  constructor(private serieService: SeriesService, private movieService: MovieService, private bookService: BookService) {
+  constructor(private serieService: SeriesService, private movieService: MovieService, private bookService: BookService,
+              private songService: SongService) {
   }
 
   ngOnInit() {
     this.serieService.getContents().subscribe(series => this.topSeries = series);
     this.bookService.getContents().subscribe(books => this.topBooks = books);
     this.movieService.getContents().subscribe(movies => this.topMovies = movies);
+    this.songService.getContents().subscribe(songs => this.topSongs = songs);
   }
 }

@@ -1,31 +1,33 @@
-<main class="container-fluid" id="header-container">
-  <button id="Button_Mis_Tops" routerLink="/">
+<main class="container-fluid d-flex justify-content-between align-items-center" id="header-container">
+  <button id="Button_Mis_Tops" style="font-size: 2em; color:#B38867" routerLink="/" >
     MisTops
   </button>
-  <div id="Header_Buttons">
+  <div id="Header_Buttons" class="d-flex justify-content-end align-items-center ">
+    <div *ngIf="!islogged">
+      <button id="Button_Discover" class="mr-5" routerLink="/discover">Discover</button>
+      <button id="Button_Rankings" class="mr-5"  routerLink="/my-rankings">My rankings</button>
+      <button class=" button mr-5"   routerLink="/login">Log in</button>
+    </div>
 
-    <button id="Button_Profile"  routerLink="/profile">Profile</button>
-    <button id="Button_Opinion"  routerLink="/opinion">Opinion</button>
-    <button id="Button_Discover" routerLink="/discover">Discover</button>
-    <button id="Button_Rankings"  routerLink="/my-rankings">My rankings</button>
-    <button id="Button_Log_in" routerLink="/login">Log in</button>
+    <div *ngIf="islogged">
+      <button (click)="logOut()" style="background-color:transparent; color: darkred;">Log Out</button>
+    <button routerLink="/discover">Discover</button>
+    <button routerLink="/my-rankings">My rankings</button>
+    <button id="Button_Profile"  routerLink="/profile">
+      <img src="assets/images/username.png" alt="profile" style="width: 2em; height: 2em;">
+    </button>
+    </div>
 
   </div>
 
-  <div class="header_buttons_small">
+
+
+  <div class="header_buttons_small align-items-center">
     <div class="dropdown">
       <button  (click)="loadMenuToggle()" type="button" class="btn btn-secondary header-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="assets/images/menu.png"  alt="menu" class="menu-icon">
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li (click)="loadProfileBody()" class="btn btn-secondary header-button">
-          <img src="assets/images/usersettings.png" alt="profile" class="small-icon">
-          Profile
-        </li>
-        <li (click)="loadOpinionBody()" class="btn btn-secondary header-button">
-          <img src="assets/images/opinion.png" alt="opinion" class="small-icon">
-          Opinion
-        </li>
         <li (click)="loadDiscoverBody()" class="btn btn-secondary header-button">
           <img src="assets/images/discover.png" alt="discover" class="small-icon">
           Discover
@@ -34,15 +36,23 @@
           <img src="assets/images/heart.png" alt="ranking" class="small-icon">
           Rankings
         </li>
+        <li (click)="logOut()" style="background-color:transparent; color: darkred;">Log Out</li>
       </ul>
     </div>
 
     <button id="mistops_small_button" type="button" class="btn btn-secondary header-button" routerLink="/">
       MisTops
     </button>
+    <div>
+      <div *ngIf="!islogged">
+        <button class="button"  routerLink="/login">Log in</button>
+      </div>
 
-    <button id="login_small_button" type="button" class="btn btn-secondary header-button" routerLink="/login">
-      <img src="assets/images/username.png" alt="Login" class="small-icon" height="512" width="512">
-    </button>
+      <div *ngIf="islogged">
+      <button id="login_small_button" type="button" class="btn btn-secondary header-button" routerLink="/profile">
+        <img src="assets/images/username.png" alt="Login" class="small-icon" height="512" width="512">
+      </button>
+      </div>
+    </div>
   </div>
 </main>

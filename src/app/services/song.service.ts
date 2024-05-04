@@ -6,14 +6,15 @@ import {
   collectionData,
   doc,
   docData,
-  Firestore,
-  updateDoc
+  Firestore, getDocs, query,
+  updateDoc, where
 } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import { Review } from "../interfaces/review";
 import { ContentService } from "./content.service";
 import { User } from '../interfaces/user';
 import { ReviewService } from "./review.service";
+import {user} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root'
@@ -59,5 +60,17 @@ export class SongService implements ContentService {
   getReviewsById(documentId: string): Observable<Review[]> {
     const reviewsRef = collection(this.firestore, 'songs/' + documentId + '/reviews');
     return collectionData(reviewsRef, { idField: 'id' }) as Observable<Review[]>;
+  }
+
+  async getContentByName(title: string) {
+    const collectionRef = collection(this.firestore, 'songs');
+    const q = query(collectionRef, where('title', '==', title));
+    const querySnapshot = await getDocs(q);
+
+    return querySnapshot.docs.map(doc => {
+      const data = doc.data() as Content;
+      data.id = doc.id;
+      return data;
+    });
   }
 }

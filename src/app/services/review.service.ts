@@ -52,4 +52,9 @@ export class ReviewService {
     const documentRef = doc(this.firestore, 'reviews', reviewId);
     return docData(documentRef) as Observable<Review>;
   }
+  queryReviewByContent(contentId: string) {
+    const collectionRef = collection(this.firestore, 'reviews');
+    const q = query(collectionRef, where('contentId', '==', contentId));
+    return getDocs(q);
+  }
 }

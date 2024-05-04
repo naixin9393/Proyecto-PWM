@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import { doc, docData, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
+import {Review} from "../interfaces/review";
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,11 @@ export class UserService {
   getUserById(userId: string): Observable<User> {
     let documentReference = doc(this.firestore, 'users', userId);
     return docData(documentReference) as Observable<User>;
+  }
+
+  getUserReviews(userId:string){
+    const collectionRef = collection(this.firestore, 'reviews');
+    const q = query(collectionRef, where('userId', '==', userId));
+    return getDocs(q);
   }
 }

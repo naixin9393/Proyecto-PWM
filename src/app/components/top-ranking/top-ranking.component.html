@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <p class="points">{{top.rating}}</p>
+    <p class="points">{{top.rating | number:'1.2-2'}}</p>
   </article>
   <div class="container d-flex justify-content-center" *ngIf="topEntries.length == 0">
     <h2>There is nothing here</h2>

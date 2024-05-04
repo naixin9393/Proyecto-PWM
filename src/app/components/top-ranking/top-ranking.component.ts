@@ -129,10 +129,6 @@ export class TopRankingComponent implements OnInit {
   getContentById(id:string){
     return this.content.find(c => c.id === id)
   }
-
-  goToReviewOrOpinion() {
-
-  }
 }
 
 

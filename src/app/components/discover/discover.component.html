@@ -8,7 +8,13 @@
 <body>
 <h1 id="Discover-Title">Discover</h1>
 <div class="search">
-  <input placeholder="Search Content" type="text" name="text" class="search__input">
+  <input placeholder="Search Content" type="text" name="text" class="search__input" (input)="goToContent()" [(ngModel)]="searchInput">
+  <select [(ngModel)]="searchType" name="muscleGroup">
+    <option selected value="book">Books</option>
+    <option selected value="movie">Movies</option>
+    <option selected value="song">Songs</option>
+    <option selected value="series">Series</option>
+  </select>
 </div>
 <div class="discovery_container container-fluid">
   <div class="row justify-content-md-center" id="discovery-buttons">

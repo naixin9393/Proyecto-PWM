@@ -10,20 +10,23 @@
 <h1 id="top_name">{{topName}}</h1>
 
 <section class="scroller">
-  <article class="vertical-entry container" *ngFor="let top of topEntries">
+  <article class="vertical-entry container" *ngFor="let top of topEntries" routerLink="/{{typeName}}/{{getContentById(top.contentId)?.id}}">
     <div class="row align-items-center" style="width: 100%">
       <div class="col-12 col-md-auto d-flex justify-content-center">
-        <img src="../../../assets/sample.jpg" class="imagen img-fluid">
+        <img [src]="getContentById(top.contentId)?.imageUrl" src="../../../assets/sample.jpg" class="imagen img-fluid">
       </div>
       <div class="col-12 col-md-6 justify-content-center">
         <div class="entry_descriptor">
-          <h1 class="entry_name">{{top.name}}</h1>
-          <h2 class="entry_author">{{top.author}}</h2>
+          <h1 class="entry_name">{{getContentById(top.contentId)?.title}}</h1>
+          <h2 class="entry_author">{{getContentById(top.contentId)?.author}}</h2>
         </div>
       </div>
     </div>
-    <p class="points">{{top.value}}</p>
+    <p class="points">{{top.rating}}</p>
   </article>
+  <div class="container d-flex justify-content-center" *ngIf="topEntries.length == 0">
+    <h2>There is nothing here</h2>
+  </div>
 </section>
 
 <button class="share">Share your ranking</button>

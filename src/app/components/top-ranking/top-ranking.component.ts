@@ -11,6 +11,7 @@ import {ContentService} from "../../services/content.service";
 import {Content} from "../../interfaces/content";
 import {UserService} from "../../services/user.service";
 import {Review} from "../../interfaces/review";
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-top-ranking',
@@ -37,7 +38,8 @@ export class TopRankingComponent implements OnInit {
               private reviewService: ReviewService,
               private bookService: BookService,
               private songService: SongService,
-              private userService: UserService) {
+              private userService: UserService,
+              private clipboard: Clipboard) {
   }
 
   ngOnInit(): void {
@@ -128,6 +130,15 @@ export class TopRankingComponent implements OnInit {
   }
   getContentById(id:string){
     return this.content.find(c => c.id === id)
+  }
+
+  copyContentsToClipBoard() {
+    let result: string[] = []
+    for (let top of this.topEntries) {
+      result.push(<string>this.getContentById(top.contentId)?.title)
+    }
+    this.clipboard.copy(JSON.stringify(result));
+    alert("Ranking Copied to ClipBoard");
   }
 }
 

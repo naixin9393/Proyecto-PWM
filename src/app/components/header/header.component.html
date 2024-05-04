@@ -2,37 +2,37 @@
   <button id="Button_Mis_Tops" style="font-size: 2em; color:#B38867" routerLink="/" >
     MisTops
   </button>
-  <div id="Header_Buttons" class="d-flex justify-content-end align-items-center ">
-    <div *ngIf="!islogged">
-      <button id="Button_Discover" class="mr-5" routerLink="/discover">Discover</button>
-      <button id="Button_Rankings" class="mr-5"  routerLink="/my-rankings">My rankings</button>
-      <button class=" button mr-5"   routerLink="/login">Log in</button>
-    </div>
+  <div id="Header_Buttons" >
+    <div class="d-flex justify-content-end align-items-center ">
+      <div *ngIf="!islogged">
+        <button id="Button_Discover" class="mr-5" routerLink="/discover">Discover</button>
+        <button id="Button_Rankings" class="mr-5"  routerLink="/my-rankings">My rankings</button>
+        <button class=" button mr-5"   routerLink="/login">Log in</button>
+      </div>
 
-    <div *ngIf="islogged">
-      <button (click)="logOut()" style="background-color:transparent; color: darkred;">Log Out</button>
-    <button routerLink="/discover">Discover</button>
-    <button routerLink="/my-rankings">My rankings</button>
-    <button id="Button_Profile"  routerLink="/profile">
-      <img src="assets/images/username.png" alt="profile" style="width: 2em; height: 2em;">
-    </button>
+      <div *ngIf="islogged" class="d-flex gap-3">
+        <button (click)="logOut()" style="background-color:transparent; color: darkred;">Log Out</button>
+        <button routerLink="/discover">Discover</button>
+        <button routerLink="/my-rankings">My rankings</button>
+        <button id="Button_Profile"  routerLink="/profile">
+          <img src="assets/images/username.png" alt="profile" style="width: 2em; height: 2em;">
+        </button>
+      </div>
     </div>
 
   </div>
 
-
-
   <div class="header_buttons_small align-items-center">
     <div class="dropdown">
-      <button  (click)="loadMenuToggle()" type="button" class="btn btn-secondary header-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-secondary header-button dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="assets/images/menu.png"  alt="menu" class="menu-icon">
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li (click)="loadDiscoverBody()" class="btn btn-secondary header-button">
+        <li class="btn btn-secondary header-button" routerLink="/discover">
           <img src="assets/images/discover.png" alt="discover" class="small-icon">
           Discover
         </li>
-        <li (click)="loadMyRankingsBody()" class="btn btn-secondary header-button">
+        <li class="btn btn-secondary header-button" routerLink="/my-rankings">
           <img src="assets/images/heart.png" alt="ranking" class="small-icon">
           Rankings
         </li>

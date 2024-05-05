@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
 import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where, updateDoc} from "@angular/fire/firestore";
-import { Observable } from "rxjs";
-import {Review} from "../interfaces/review";
+import { Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  isLogged: boolean = false;
   constructor(private auth: Auth, private firestore: Firestore) {
   }
 
@@ -40,10 +40,12 @@ export class UserService {
   }
 
   login(email: string, password: string) {
+    this.isLogged = true;
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
   logout() {
+    this.isLogged = false;
     return signOut(this.auth);
   }
 

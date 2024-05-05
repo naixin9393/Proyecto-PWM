@@ -1,6 +1,6 @@
-<section id="home-welcome-section">
+<section id="home-welcome-section" *ngIf="!isLoggedIn">
   <div>
-    <p id="home-welcome-text" class="text text-primary text-center display-2">Rank and share with your friends !</p>
+    <p id="home-welcome-text" class="text text-primary text-center display-2">Rank and share with your friends!</p>
   </div>
   <button id="home-welcome-button" routerLink="/login">Get started</button>
 </section>

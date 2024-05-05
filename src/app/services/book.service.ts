@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TopEntry } from "../interfaces/top-entry";
 import {
   Firestore,
-  addDoc,
   collection,
   collectionData,
   doc,
@@ -15,8 +13,6 @@ import { ContentService } from "./content.service";
 import { Review } from "../interfaces/review";
 import { User } from '../interfaces/user';
 import { ReviewService } from "./review.service";
-import {user} from "@angular/fire/auth";
-import {DocumentData} from "@angular/fire/compat/firestore";
 
 
 @Injectable({
@@ -40,15 +36,6 @@ export class BookService implements ContentService {
     )
   }
 
-  addBook(book: TopEntry) {
-    const booksRef = collection(this.firestore, 'books');
-    return addDoc(booksRef, book);
-  }
-
-  getBooks(): Observable<TopEntry[]> {
-    const booksRef = collection(this.firestore, 'books');
-    return collectionData(booksRef, { idField: 'id' }) as Observable<TopEntry[]>;
-  }
 
   getContents(): Observable<Content[]> {
     const contentsRef = collection(this.firestore, 'books');

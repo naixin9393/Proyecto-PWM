@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import {doc, docData, Firestore, getDoc, setDoc, updateDoc} from "@angular/fire/firestore";
+import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where, updateDoc} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
+import {Review} from "../interfaces/review";
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,10 @@ export class UserService {
       console.error('Error al actualizar el nombre de usuario en Firestore:', error);
       throw error;
     }
+    
+   getUserReviews(userId:string){
+    const collectionRef = collection(this.firestore, 'reviews');
+    const q = query(collectionRef, where('userId', '==', userId));
+    return getDocs(q);
   }
-}
+ }

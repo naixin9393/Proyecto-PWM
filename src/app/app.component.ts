@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from "./components/header/header.component";
-import {OpinionpageComponent} from "./components/opinionpage/opinionpage.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {DiscoverComponent} from "./components/discover/discover.component";
 import {MyRankingsComponent} from "./components/my-rankings/my-rankings.component";
@@ -20,7 +19,6 @@ const analytics = getAnalytics(app);
   standalone: true,
   imports: [RouterOutlet,
             HeaderComponent,
-            OpinionpageComponent,
             FooterComponent,
             DiscoverComponent,
             MyRankingsComponent,

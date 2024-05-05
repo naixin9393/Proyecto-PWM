@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where} from "@angular/fire/firestore";
+import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where, updateDoc} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 import {Review} from "../interfaces/review";
 
@@ -52,9 +52,19 @@ export class UserService {
     return docData(documentReference) as Observable<User>;
   }
 
-  getUserReviews(userId:string){
+  async updateUsername(userId: string, newUsername: string) {
+    try {
+      let documentReference = doc(this.firestore, 'users', userId);
+      await updateDoc(documentReference, { username: newUsername });
+      console.log('Nombre de usuario actualizado correctamente en Firestore');
+    } catch (error) {
+      console.error('Error al actualizar el nombre de usuario en Firestore:', error);
+      throw error;
+    }
+    
+   getUserReviews(userId:string){
     const collectionRef = collection(this.firestore, 'reviews');
     const q = query(collectionRef, where('userId', '==', userId));
     return getDocs(q);
   }
-}
+ }

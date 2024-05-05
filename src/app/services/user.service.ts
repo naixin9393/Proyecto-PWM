@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
-import { doc, docData, Firestore, getDoc, setDoc } from "@angular/fire/firestore";
+import {doc, docData, Firestore, getDoc, setDoc, updateDoc} from "@angular/fire/firestore";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -49,5 +49,16 @@ export class UserService {
   getUserById(userId: string): Observable<User> {
     let documentReference = doc(this.firestore, 'users', userId);
     return docData(documentReference) as Observable<User>;
+  }
+
+  async updateUsername(userId: string, newUsername: string) {
+    try {
+      let documentReference = doc(this.firestore, 'users', userId);
+      await updateDoc(documentReference, { username: newUsername });
+      console.log('Nombre de usuario actualizado correctamente en Firestore');
+    } catch (error) {
+      console.error('Error al actualizar el nombre de usuario en Firestore:', error);
+      throw error;
+    }
   }
 }

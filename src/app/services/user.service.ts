@@ -2,14 +2,20 @@ import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "@angular/fire/auth";
 import {collection, doc, docData, Firestore, getDoc, getDocs, query, setDoc, where, updateDoc} from "@angular/fire/firestore";
-import { Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   isLogged: boolean = false;
+  private isLoggedInSubject: BehaviorSubject<boolean>;
   constructor(private auth: Auth, private firestore: Firestore) {
+    this.isLoggedInSubject = new BehaviorSubject<boolean>(this.isLogged);
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
   }
 
   async getCurrentUser() {
@@ -41,11 +47,13 @@ export class UserService {
 
   login(email: string, password: string) {
     this.isLogged = true;
+    this.isLoggedInSubject.next(this.isLogged);
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
   logout() {
     this.isLogged = false;
+    this.isLoggedInSubject.next(this.isLogged);
     return signOut(this.auth);
   }
 

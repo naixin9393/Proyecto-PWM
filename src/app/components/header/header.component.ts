@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {NgIf} from "@angular/common";
@@ -13,13 +13,15 @@ import {NgIf} from "@angular/common";
   ],
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit{
   islogged: boolean = false;
   constructor(private router: Router, private renderer: Renderer2, private userService: UserService) {
   }
 
   ngOnInit() {
-    this.islogged = this.userService.getCurrentUser() != null;
+    this.userService.isLoggedIn().subscribe(isLogged => {
+      this.islogged = isLogged;
+    });
   }
 
   logOut(){
